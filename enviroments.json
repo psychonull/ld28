@@ -1,0 +1,11 @@
+{
+  "prod": {
+    "root": ""
+  },
+  "stage": {
+    "root": ""
+  },
+  "local": {
+    "root": "http://localhost:3000"
+  }
+}
