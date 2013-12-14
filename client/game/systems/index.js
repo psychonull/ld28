@@ -24,11 +24,9 @@ module.exports = function(game){
     movement: require('./Movement').create()
   };
 
-/*
   systems.collisions = {
-
+    peopleCollision: require('./Collision/people').create()
   };
-*/
 
   systems.contagion = {
     contagion: require('./Contagion').create()
@@ -66,6 +64,7 @@ module.exports = function(game){
     , "factories"
     , "movement"
     , "contagion"
+    , "collisions"
     , "bounds"
     , "rendering"
   ];

@@ -11,7 +11,6 @@ module.exports = oaky.System.extend({
 
     for(var i=0; i<entities.length; i++) {
       var person = entities[i];
-
       
       if (!person.has("target")) {
         var p = person.get("position");
