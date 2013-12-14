@@ -3,7 +3,7 @@ var Renderer = require('./index');
 
 var RendererDynamic = module.exports = Renderer.extend({
 
-  uses: ["display", "dynamic"],
+  uses: ["display", "dynamic", "position"],
 
   initialize: function(/*options*/){ 
     this._super(RendererDynamic, arguments);

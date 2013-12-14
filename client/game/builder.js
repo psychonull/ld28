@@ -73,13 +73,18 @@ module.exports = function(){
   controls
     .on('pause', pauseGame)
     .on('slide:start', function(e){
-      game.walkLine.get('display').hidden = false;
-      game.walkLine.set('position', e);
+      game.walkLine.set('walkStartingPoint', e);
       game.walkLine.set('target', e);
     }).on('slide', function(e){
-      game.walkLine.set('target', e);
+      if(game.walkLine.has('position')){
+        game.walkLine.set('target', e);
+      }
     }).on('slide:end', function(){
-      game.walkLine.get('display').hidden = true;
+      if(game.walkLine.has('target')){
+        game.player.set('target', game.walkLine.get('target'));
+      }
+      game.walkLine.remove('walkStartingPoint');
+      game.walkLine.remove('position');
     });
 
   game.start();

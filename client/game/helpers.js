@@ -70,6 +70,10 @@ module.exports = {
 
     return false;
   },
+  
+  isPointInCircle: function(point, circleCenter, radius){
+    return this.vectors.length(point, circleCenter) < radius;
+  },
 
   isPointInBox: function (point, box) {
     return (

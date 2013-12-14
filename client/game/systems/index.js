@@ -29,6 +29,11 @@ module.exports = function(game){
 
   };
 */
+  systems.controls = {
+    walkControl: require('./WalkControl').create({
+      player: game.player
+    })
+  };
 
   systems.factories = {
     peopleFactory: require('./Factory/People').create()
@@ -52,6 +57,7 @@ module.exports = function(game){
 
   var order = [
       "camerasAndFacing"
+    , "controls"
     , "factories"
     , "movement"
     , "bounds"

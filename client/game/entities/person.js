@@ -36,6 +36,8 @@ module.exports = function(game, pos){
 
   });
 
+  person.add("collision", 20);
+
   person.add("dynamic");
 
   person.add('npc');

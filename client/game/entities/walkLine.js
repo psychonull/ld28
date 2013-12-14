@@ -2,9 +2,6 @@
 module.exports = function(game){
   var walkLine = game.entities.make();
   
-  walkLine.add("position", { x: 0, y: 0});
-  walkLine.add("target", { x: 0, y: 0 });
-
   walkLine.add("dynamic");
   walkLine.add("size", 'TODO: remove this');
 
@@ -12,8 +9,10 @@ module.exports = function(game){
     type: 'line',
     color: '#F00',
     width: 3,
-    hidden: true
+    hidden: false
   });
+
+  walkLine.add('walkControl');
 
   return walkLine;
 };
