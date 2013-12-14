@@ -152,21 +152,12 @@ var RendererDynamic = module.exports = Renderer.extend({
     var xView = this.game.camera.get('position').x;
     var yView = this.game.camera.get('position').y;
 
-    var x1 = display.from.x - xView;
-    var y1 = display.from.y - yView;
-    var x2 = display.to.x - xView;
-    var y2 = display.to.y - yView;
+    var x1 = entity.get("position").x - xView;
+    var y1 = entity.get("position").y - yView;
+    var x2 = entity.get("target").x - xView;
+    var y2 = entity.get("target").y - yView;
 
-    if (display.colorStop){
-      var grad = ctx.createLinearGradient(x1, y1, x2, y2);
-
-      for (var i=0; i<display.colorStop.length; i++){
-        var cp = display.colorStop[i];
-        grad.addColorStop(cp.p, cp.c);
-      }
-
-      ctx.strokeStyle = grad;
-    }
+    ctx.strokeStyle = display.color;
     
     ctx.beginPath();
     ctx.moveTo(x1, y1);

@@ -50,6 +50,8 @@ module.exports = function(){
 
   game.player = player;
 
+  game.walkLine = require('./entities/walkLine')(game);
+
   require("./systems")(game);
   
   var controls = new mumps.Controls({
@@ -71,16 +73,14 @@ module.exports = function(){
   controls
     .on('pause', pauseGame)
     .on('slide:start', function(e){
-      console.log('slide:start');
-      console.log(e);
+      game.walkLine.get('display').hidden = false;
+      game.walkLine.set('position', e);
+      game.walkLine.set('target', e);
     }).on('slide', function(e){
-      console.log('slide:');
-      console.log(e);
-    }).on('slide:end', function(e){
-      console.log('slide:end');
-      console.log(e);
-    })
-    ;
+      game.walkLine.set('target', e);
+    }).on('slide:end', function(){
+      game.walkLine.get('display').hidden = true;
+    });
 
   game.start();
 
