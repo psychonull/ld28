@@ -1,7 +1,7 @@
 
 var loader = require('./loader');
 var builder = require('./builder');
-var Controls = require('./controls/keyboard');
+var Controls = require('./controls/mouse');
 
 $(function(){
 
