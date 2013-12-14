@@ -25,8 +25,7 @@ $(function(){
       window.console.log('LOADING > ' + prg);
     })
     .on('complete', function(){
-      mumps.game = builder;
-      mumps.game();
+      mumps.game = builder();
     })
     .load();
 
