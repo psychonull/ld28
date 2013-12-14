@@ -44,7 +44,5 @@ module.exports = function(game, pos){
   person.add('npc');
   person.add('person');
 
-  person.add("infectionProgress", 0);
-
   return person;
 };

@@ -29,7 +29,8 @@ module.exports = function(game){
   };
 
   systems.contagion = {
-    contagion: require('./Contagion').create()
+    contagion: require('./Contagion').create(),
+    infection: require('./Infection').create()
   };
 
   systems.controls = {

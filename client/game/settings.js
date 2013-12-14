@@ -3,12 +3,20 @@ module.exports = {
     debug: false
 
   , worldSize: {
-      w: 2000, 
-      h: 2000
+      w: 1600, 
+      h: 400
     }
 
   , images: {
     "bg": "images/bg.png"
+  }
+
+  , gameplay: {
+      infection: {
+        initialInfections: 1,
+        maxExposureTime: 1
+      }
+
   }
   
 /*

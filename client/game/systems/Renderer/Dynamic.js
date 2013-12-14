@@ -135,8 +135,10 @@ var RendererDynamic = module.exports = Renderer.extend({
 
         //DEBUG INFECTION
         if (entity.has("infectionProgress")){
-          var ip = entity.get("infectionProgress");
-          ctx.strokeStyle = mumps.helpers.colors.hsl_col_perc(ip, 0, 100);
+          var ip = entity.get("infectionProgress").progress;
+          ctx.strokeStyle = mumps.helpers.colors.hsl_col_perc(1 - ip, 0, 100);
+          ctx.fillStyle = mumps.helpers.colors.hsl_col_perc(1 - ip, 0, 100);
+          ctx.fill();
         }
         else {
           ctx.strokeStyle = 'gray';
