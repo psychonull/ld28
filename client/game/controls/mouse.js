@@ -22,6 +22,14 @@ var Mouse = module.exports = function(options){
   this.propelling = false;
 };
 
+function normalizeEventCoordinates(e){
+  var offset = $(e.target).offset();
+  return {
+    x: e.pageX - offset.left,
+    y: e.pageY - offset.top
+  };
+}
+
 Mouse.prototype.enable = function(){
   this.enabled = true;
   return this;
@@ -62,31 +70,28 @@ Mouse.prototype._onSlide = function(e){
     return;
   }
 
-  var offset = $(e.target).offset();
-  var x = e.pageX - offset.left;
-  var y = e.pageY - offset.top;
-
   _.each(this.events.slide, function(cb){
-    cb({ x: x, y: y });
+    cb(normalizeEventCoordinates(e));
   });
 };
 
-Mouse.prototype._onSlideStart = function(){
+Mouse.prototype._onSlideStart = function(e){
   if (!this.enabled){
     return;
   }
 
   _.each(this.events["slide:start"], function(cb){
-    cb();
+    cb(normalizeEventCoordinates(e));
   });
 };
 
-Mouse.prototype._onSlideEnd = function(){
+Mouse.prototype._onSlideEnd = function(e){
   if (!this.enabled){
     return;
   }
 
   _.each(this.events["slide:end"], function(cb){
-    cb();
+    cb(normalizeEventCoordinates(e));
   });
 };
+
