@@ -8,16 +8,7 @@ var RendererDynamic = module.exports = Renderer.extend({
   initialize: function(/*options*/){ 
     this._super(RendererDynamic, arguments);
 
-    /*
-    this.scenary = options.scenary || "sunny";
-
-    this.bg0 = this.ctx.createPattern(mumps.repository[this.scenary + "_bg0"], 'repeat');
-    this.bg1 = this.ctx.createPattern(mumps.repository[this.scenary + "_bg1"], 'repeat');
-    this.bg2 = this.ctx.createPattern(mumps.repository[this.scenary + "_bg2"], 'repeat');
-    */
-
-    this.lastPosX = 0;
-    this.lastPosY = 0;
+    this.bg = this.ctx.createPattern(mumps.repository.bg, 'repeat');
   },
 
   process: function(dt, entities) {
@@ -31,7 +22,7 @@ var RendererDynamic = module.exports = Renderer.extend({
 
     // Background
     
-    //this.drawBackground();
+    this.drawBackground();
 
     // Dynamic Entities
 
@@ -78,10 +69,6 @@ var RendererDynamic = module.exports = Renderer.extend({
     } 
   },
 
-  updateLastPos: function(){
-    this.lastPosX += 1;
-  },
-
   drawBackground: function(){
     var ctx = this.ctx;
     var pc = this.game.camera.get('position');
@@ -93,22 +80,10 @@ var RendererDynamic = module.exports = Renderer.extend({
     ctx.save();
     
     ctx.rect(0, 0, sc.width, sc.height);
-    ctx.fillStyle = this.bg0;
+    ctx.fillStyle = this.bg;
     ctx.translate(bgX, bgY);
     ctx.fill();
 
-    this.updateLastPos();
-
-    ctx.rect(0, 0, sc.width, sc.height);
-    ctx.fillStyle = this.bg2;
-    ctx.translate(this.lastPosX*2, this.lastPosY);
-    ctx.fill();
-
-    ctx.rect(0, 0, sc.width, sc.height);
-    ctx.fillStyle = this.bg1;
-    ctx.translate(this.lastPosX, this.lastPosY);
-    ctx.fill();
-    
     ctx.restore();
   },
 

@@ -19,20 +19,7 @@ module.exports = oaky.System.extend({
 
       var angle = mumps.helpers.vectors.angleTo(d);
   
-      entity.set('angle', { rad: angle });
-
-      if (entity.has("scale")){
-        var deg = mumps.helpers.angleToDeg(angle);
-
-        if (deg < -90 || deg > 90){
-          if (entity.get('scale').y > 0){
-            entity.get('scale').y *= -1;
-          }
-        }
-        else if (entity.get('scale').y < 0){
-          entity.get('scale').y *= -1;
-        }
-      }
+      entity.set('angle', angle);
     }
   }
 

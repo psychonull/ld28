@@ -5,7 +5,7 @@ module.exports = function(game){
 
   person.add("position", { x: 0, y: 0 });
   person.add("velocity", { x: 0, y: 0 });
-  person.add("size", { width: 100, height: 50 });
+  person.add("size", { width: 70, height: 30 });
   
   person.add("angle", 0);
   person.add("scale", { x: 1, y: 1 });
@@ -24,12 +24,14 @@ module.exports = function(game){
   person.add("display", {
     type: "rect",
 
-    width: 100,
-    height: 80,
+    x: 0,
+    y: 0,
+    width: 70,
+    height: 30,
 
     strokeColor: "red",
     strokeWidth: 2,
-    fillStyle: "silver"
+    fill: "silver"
 
   });
 
