@@ -6,7 +6,7 @@ module.exports = oaky.System.extend({
   uses: ["person"],
 
   initialize: function(){ 
-    this.peopleMax = 20;
+    this.peopleMax = 30;
   },
 
   process: function(dt, entities) {

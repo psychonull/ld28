@@ -13,11 +13,18 @@ module.exports = oaky.System.extend({
       var entity = entities[i];
 
       var pos = entity.get('position');
-      
-      if (entity.has("target")){
+
+      if (entity.is("spinning")){
+        entity.set("velocity", {
+          x: 0,
+          y: 0
+        });
+      }
+      else if (entity.has("target")){
+
         var pc = mumps.helpers.getCenter(entity);
         var l = mumps.helpers.vectors.length(pc, entity.get("target"));
-        var gotTarget = (l < 50) ? true : false;
+        var gotTarget = (l < 10) ? true : false;
 
         if (gotTarget){
           entity.remove("target");
@@ -27,7 +34,7 @@ module.exports = oaky.System.extend({
           });
         }
         else {
-          var n = mumps.helpers.vectors.normalize(pos, entity.get("target"));
+          var n = mumps.helpers.vectors.normalize(pc, entity.get("target"));
         
           entity.set("velocity", {
             x: n.x * 2,

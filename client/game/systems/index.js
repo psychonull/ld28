@@ -24,11 +24,10 @@ module.exports = function(game){
     movement: require('./Movement').create()
   };
 
-/*
   systems.collisions = {
-
+    peopleCollision: require('./Collision/people').create()
   };
-*/
+
   systems.controls = {
     walkControl: require('./WalkControl').create({
       player: game.player
@@ -60,6 +59,7 @@ module.exports = function(game){
     , "controls"
     , "factories"
     , "movement"
+    , "collisions"
     , "bounds"
     , "rendering"
   ];
