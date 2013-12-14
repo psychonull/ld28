@@ -16,7 +16,7 @@ module.exports = oaky.System.extend({
     var ctx = this.ctx;
 
     if (entity.has('angle')){
-      var angle = entity.get('angle').rad;
+      var angle = entity.get('angle');
       ctx.rotate(angle);
     }
 

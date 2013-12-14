@@ -39,6 +39,8 @@ module.exports = oaky.System.extend({
       }
 
       if (gotBoundX || gotBoundY){
+        entity.remove('target');
+        
         if (entity.has('velocity')){
           var vel = entity.get('velocity');
           vel.x = gotBoundX ? 0 : vel.x;

@@ -5,8 +5,8 @@ module.exports = function(game, pos){
 
   person.add("position", pos || { x: 0, y: 0 });
   person.add("velocity", { x: 0, y: 0 });
-  person.add("target", { x: 0, y: 0 });
-  person.add("size", { width: 70, height: 30 });
+  //person.add("target", { x: 0, y: 0 });
+  person.add("size", { width: 30, height: 70 });
   
   person.add("angle", 0);
   person.add("scale", { x: 1, y: 1 });
@@ -27,8 +27,8 @@ module.exports = function(game, pos){
 
     x: 0,
     y: 0,
-    width: 70,
-    height: 30,
+    width: 30,
+    height: 70,
 
     strokeColor: "red",
     strokeWidth: 2,
