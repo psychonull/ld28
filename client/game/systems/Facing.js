@@ -33,6 +33,21 @@ module.exports = oaky.System.extend({
       else {
         entity.add("spinning");
         var distB = current - angle;
+/*
+        var degA = Math.abs(mumps.helpers.angleToDeg(angle));
+        var degB = Math.abs(mumps.helpers.angleToDeg(current));
+        var difA = Math.abs(degA - degB);
+        var difB = 360 - (degA + degB);
+
+        if (difA < difB) {
+          degB += 1;
+          current = mumps.helpers.angleToRad(degB);
+        }
+        else {
+          degB -= 1;
+          current = mumps.helpers.angleToRad(degB);
+        }
+        */
 
         if (distA > distB){
           current += 0.1;
@@ -40,6 +55,7 @@ module.exports = oaky.System.extend({
         else {
           current -= 0.1;
         }
+
       }
 
       entity.set("angle", current);
