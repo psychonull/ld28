@@ -33,6 +33,10 @@ module.exports = oaky.System.extend({
       }
 
     }
+  },
+
+  _contagionCalc: function(/*dt, distance, power*/){
+    // la curva la define la func
   }
 
 });
