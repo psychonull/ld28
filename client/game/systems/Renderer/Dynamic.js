@@ -115,11 +115,11 @@ var RendererDynamic = module.exports = Renderer.extend({
 
   drawDebug: function(entity, xView, yView, p, s){
     var ctx = this.ctx;
-
+    var posC = mumps.helpers.getCenter(entity);
     //DEBUG COLLISIONS
     if (entity.has('collision')){
 
-      var posC = mumps.helpers.getCenter(entity);
+
       var r = entity.get('collision');
 
       ctx.beginPath();
@@ -132,7 +132,15 @@ var RendererDynamic = module.exports = Renderer.extend({
     //DEBUG POSITION AND SIZE
     ctx.beginPath();
     ctx.rect(p.x - xView, p.y - yView, s.width, s.height);
-    ctx.strokeStyle = 'gray';
+
+        //DEBUG INFECTION
+        if (entity.has("infectionProgress")){
+          var ip = entity.get("infectionProgress");
+          ctx.strokeStyle = mumps.helpers.colors.hsl_col_perc(ip, 0, 100);
+        }
+        else {
+          ctx.strokeStyle = 'gray';
+        }
     ctx.lineWidth = 2;
     ctx.stroke();
 
@@ -143,6 +151,17 @@ var RendererDynamic = module.exports = Renderer.extend({
       ctx.fillStyle = 'red';
       ctx.fill();
     }
+
+    //DEBUG CONTAGION FOCUS
+    if (entity.has("contagionFocus")){
+      var cf = entity.get("contagionFocus").radius;
+      ctx.beginPath();
+      ctx.arc(posC.x - xView, posC.y - yView, cf, 0, 2 * Math.PI, false);
+      ctx.strokeStyle = 'green';
+      ctx.lineWidth = 2;
+      ctx.stroke();
+    }
+
 
   },
 

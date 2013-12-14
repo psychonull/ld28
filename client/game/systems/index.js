@@ -29,6 +29,11 @@ module.exports = function(game){
 
   };
 */
+
+  systems.contagion = {
+    contagion: require('./Contagion').create()
+  };
+
   systems.controls = {
     walkControl: require('./WalkControl').create({
       player: game.player
@@ -60,6 +65,7 @@ module.exports = function(game){
     , "controls"
     , "factories"
     , "movement"
+    , "contagion"
     , "bounds"
     , "rendering"
   ];
