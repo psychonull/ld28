@@ -3,21 +3,23 @@ module.exports = {
     debug: false
 
   , worldSize: {
-      w: 1600, 
-      h: 400
+      w: 2000, 
+      h: 2000
     }
 
   , images: {
     "bg": "images/bg.png"
   }
 
-  , gameplay: {
-      infection: {
-        initialInfections: 1,
-        maxExposureTime: 1
-      }
+  , infection: {
+      initialInfections: 1,
+      maxExposureTime: 1,
+      exposureCooldown: 3,
+      contagionRadius: 70,
+      contagionPower: 2,
+    }
 
-  }
+  
   
 /*
   , soundsUrl: "sounds"

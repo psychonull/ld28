@@ -3,7 +3,7 @@ module.exports = oaky.System.extend({
 
   uses: ["contagionFocus"],
 
-  MAX_TIME_EXPOSED: 1,
+  MAX_TIME_EXPOSED: mumps.settings.infection.maxExposureTime,
 
   initialize: function(){ 
   },
@@ -21,10 +21,6 @@ module.exports = oaky.System.extend({
         }
 
         if(mumps.helpers.isNear(entity, guy, contagionFocus.radius)){
-          /*guy.set('contagionFocus', { 
-            radius: 70,
-            power: 2
-          });*/
           if(!guy.has('infectionProgress')){
             guy.set('infectionProgress', {
               progress: 0.01,

@@ -47,11 +47,10 @@ module.exports = oaky.System.extend({
     else if (infectionProgress.progress >= 1){
       entity.remove("infectionProgress");
       entity.add("contagionFocus", {
-        radius: 70,
-        power: 2
+        radius: mumps.settings.infection.contagionRadius,
+        power: mumps.settings.infection.contagionPower
       });
     }
   }
 
 });
-
