@@ -249,6 +249,20 @@ module.exports = {
     eb.set("position", { x: r.b.x, y: r.b.y });
     ea.set("velocity", { x: r.a.vx, y: r.a.vy });
     eb.set("velocity", { x: r.b.vx, y: r.b.vy });
+  }, 
+
+  colors: {
+    hsl_col_perc: function(percent,start,end) {
+
+       var a = percent,
+       b = end*a,
+       c = b+start;
+
+      //Return a CSS HSL string
+      return 'hsl('+c+',100%,50%)';
+    }
+
+
   }
 
 };
