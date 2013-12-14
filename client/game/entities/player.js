@@ -1,12 +1,8 @@
 
 module.exports = function(game, person){
   
-  person.add("position", { x: game.size.width/2, y: game.size.height/2 });
-  person.add("velocity", { x: 0, y: 0 });
+  person.add("position", { x: 50, y: 50 });
   
-  person.add("angle", 0);
-  person.add("scale", { x: 1, y: 1 });
-
   person.add("boundary", {
     min: {
       x: 0,
@@ -17,6 +13,8 @@ module.exports = function(game, person){
       y: mumps.settings.worldSize.h
     }
   });
+
+  person.get("display").fill = "red";
 
   person.add("dynamic");
   person.add('player');
