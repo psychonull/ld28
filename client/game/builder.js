@@ -70,32 +70,22 @@ module.exports = function(){
 
   controls
     .on('pause', pauseGame)
-    /*.on('aim', function(position){
-      game.aim.set('position', position);
-    })*/
-    .on('propelling:on', function(){
-      game.player.add("propelling");
+    .on('slide:start', function(e){
+      console.log('slide:start');
+      console.log(e);
+    }).on('slide', function(e){
+      console.log('slide:');
+      console.log(e);
+    }).on('slide:end', function(e){
+      console.log('slide:end');
+      console.log(e);
     })
-    .on('propelling:off', function(){
-      game.player.remove("propelling");
-    })
-    .on('gun:on', function(){
-      game.player.add("firing");
-    })
-    .on('gun:off', function(){
-      game.player.remove("firing");
-    });
+    ;
 
   game.start();
 
   game.on("after:destroy", function(){
-    controls
-      .off('pause')
-      .off('aim')
-      .off('propelling:on')
-      .off('propelling:off')
-      .off('gun:on')
-      .off('gun:off');
+    controls.off();
   });
 
 };
