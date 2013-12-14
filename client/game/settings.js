@@ -2,8 +2,13 @@
 module.exports = {
     debug: false
 
+  , worldSize: {
+      w: 600, 
+      h: 600
+    }
+
   , images: {
-      "ldlogo": "images/LDLogo2009.png"
+    "ldlogo": "images/LDLogo2009.png"
   }
   
 /*

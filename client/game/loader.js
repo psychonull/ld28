@@ -23,7 +23,7 @@ function reportProgress(){
 module.exports = {
   initResources: function(images/*, sounds*/){
 
-    ld28.repository
+    mumps.repository
       .addResources(images)
       .on('error', events.error)
       .on('report', function(prg){
@@ -34,7 +34,7 @@ module.exports = {
       })
       .on('complete', checkComplete);
 /*
-    ld28.sounds
+    mumps.sounds
       .addSounds(sounds)
       .on('error', events.error)
       .on('report', function(prg){
@@ -55,8 +55,8 @@ module.exports = {
   },
 
   load: function(){
-    ld28.repository.load();
-    //ld28.sounds.load(ld28.settings.soundsUrl);
+    mumps.repository.load();
+    //mumps.sounds.load(mumps.settings.soundsUrl);
   }
 };
 

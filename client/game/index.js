@@ -5,7 +5,7 @@ var Controls = require('./controls/keyboard');
 
 $(function(){
 
-  window.ld28 = {
+  window.mumps = {
     repository: require('./repository'),
     //sounds: require('./sounds'),
     settings: require('./settings'),
@@ -15,8 +15,8 @@ $(function(){
 
   loader
     .initResources(
-      ld28.settings.images/*, 
-      ld28.settings.sounds*/
+      mumps.settings.images/*, 
+      mumps.settings.sounds*/
     )
     .on('error', function(err){
       window.console.log(err);
@@ -25,7 +25,8 @@ $(function(){
       window.console.log('LOADING > ' + prg);
     })
     .on('complete', function(){
-      ld28.game = builder;
+      mumps.game = builder;
+      mumps.game();
     })
     .load();
 

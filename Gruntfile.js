@@ -112,7 +112,7 @@ module.exports = function (grunt) {
             , console: true
             , moment: true
             , oaky: true
-            , ld28: true
+            , mumps: true
           }
         }
       }

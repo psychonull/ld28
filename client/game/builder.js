@@ -17,9 +17,42 @@ module.exports = function(){
     canvasStatic: canvasStatic
   });
 
+  game.camera = require('./entities/camera')(game);
+
+  function updateCameraSize() {
+    game.size = {
+      width: $doc.width(),
+      height: $doc.height()
+    };
+
+    $('.game-ctn')
+      .add('.main')
+      .width(game.size.width)
+      .height(game.size.height);
+
+    game.camera.set("size", { 
+      width: game.size.width, 
+      height: game.size.height 
+    });
+
+    canvas.width = game.size.width;
+    canvas.height = game.size.height;
+
+    canvasStatic.width = game.size.width;
+    canvasStatic.height = game.size.height;
+  }
+
+  $("body").css("overflow", "hidden");
+  updateCameraSize();
+
+  var player = require('./entities/person')(game);
+  player = require('./entities/player')(game, player);
+
+  game.player = player;
+
   require("./systems")(game);
   
-  var controls = new ld28.Controls({
+  var controls = new mumps.Controls({
     container: canvasStatic
   });
   
@@ -37,9 +70,9 @@ module.exports = function(){
 
   controls
     .on('pause', pauseGame)
-    .on('aim', function(position){
+    /*.on('aim', function(position){
       game.aim.set('position', position);
-    })
+    })*/
     .on('propelling:on', function(){
       game.player.add("propelling");
     })
