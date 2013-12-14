@@ -23,19 +23,14 @@ module.exports = function(game){
 
   };
 */
-/*
+
   systems.factories = {
-    personFactory: require('./Factory/Person').create()
+    peopleFactory: require('./Factory/People').create()
   };
 
-  systems.boundsAndStats = {
-    boundaries: require('./Boundaries').create(),
-
-    stats: require('./Stats').create({
-      lastLife: game.player.get('life').life
-    })
+  systems.bounds = {
+    boundaries: require('./Boundaries').create()
   };
-*/
 
   systems.rendering = {
 
@@ -51,6 +46,8 @@ module.exports = function(game){
 
   var order = [
       "camerasAndFacing"
+    , "factories"
+    , "bounds"
     , "rendering"
   ];
 

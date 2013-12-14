@@ -1,10 +1,11 @@
 
-module.exports = function(game){
+module.exports = function(game, pos){
   
   var person = game.entities.make();
 
-  person.add("position", { x: 0, y: 0 });
+  person.add("position", pos || { x: 0, y: 0 });
   person.add("velocity", { x: 0, y: 0 });
+  person.add("target", { x: 0, y: 0 });
   person.add("size", { width: 70, height: 30 });
   
   person.add("angle", 0);
@@ -38,6 +39,7 @@ module.exports = function(game){
   person.add("dynamic");
 
   person.add('person');
+  person.add('alive');
 
   return person;
 };

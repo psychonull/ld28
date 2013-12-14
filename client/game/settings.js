@@ -3,8 +3,8 @@ module.exports = {
     debug: false
 
   , worldSize: {
-      w: 2000, 
-      h: 2000
+      w: 1000, 
+      h: 1000
     }
 
   , images: {
