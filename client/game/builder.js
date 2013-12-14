@@ -80,7 +80,7 @@ module.exports = function(){
         game.walkLine.set('target', e);
       }
     }).on('slide:end', function(){
-      if(game.walkLine.has('target')){
+      if(game.walkLine.has('position') && game.walkLine.has('target')){
         game.player.set('target', game.walkLine.get('target'));
       }
       game.walkLine.remove('walkStartingPoint');
