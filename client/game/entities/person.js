@@ -38,8 +38,8 @@ module.exports = function(game, pos){
 
   person.add("dynamic");
 
+  person.add('npc');
   person.add('person');
-  person.add('alive');
 
   return person;
 };

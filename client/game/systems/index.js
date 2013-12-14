@@ -18,6 +18,12 @@ module.exports = function(game){
 
     facing: require('./Facing').create()
   };
+
+  systems.movement = {
+    iaNPC: require('./iaNPC').create(),
+    movement: require('./Movement').create()
+  };
+
 /*
   systems.collisions = {
 
@@ -47,6 +53,7 @@ module.exports = function(game){
   var order = [
       "camerasAndFacing"
     , "factories"
+    , "movement"
     , "bounds"
     , "rendering"
   ];
