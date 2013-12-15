@@ -16,7 +16,7 @@ module.exports = oaky.System.extend({
       var people = this.game.entities.get('person');
       for (var j = 0; j < people.length; j++){
         var guy = people[j];
-        if (guy.has("contagionFocus")){
+        if (guy.has("contagionFocus") || guy.is("inmune")){
           continue;
         }
 

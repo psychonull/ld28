@@ -16,7 +16,8 @@ module.exports = function(game, options){
         x: mumps.settings.worldSize.w,
         y: mumps.settings.worldSize.h
       }
-    }
+    },
+    inmune: false
   });
 
   var pos = _.pick(options, "x", "y");
@@ -77,6 +78,10 @@ module.exports = function(game, options){
 
   if(options.contagionFocus){
     person.add("contagionFocus", options.contagionFocus);
+  }
+
+  if(options.inmune){
+    person.add("inmune");
   }
 
   return person;
