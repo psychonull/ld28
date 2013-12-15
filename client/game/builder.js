@@ -1,6 +1,7 @@
 
-module.exports = function(){
+module.exports = function(level){
   
+  var dataIndex = require('./data/index.js');
   var canvas = document.getElementById('game-viewport');
   var canvasStatic = document.getElementById('game-static');
 
@@ -11,12 +12,15 @@ module.exports = function(){
     height: $doc.height()
   };
 
+  mumps.settings.worldSize = dataIndex[level].worldSize;
+
   var game = oaky.createGame({
     size: size,
     canvas: canvas,
     canvasStatic: canvasStatic
   });
 
+  game.level = level;
   game.camera = require('./entities/camera')(game);
 
   function updateCameraSize() {
@@ -47,12 +51,21 @@ module.exports = function(){
   updateCameraSize();
 
   var player = require('./entities/person')(game);
-  player = require('./entities/player')(game, player);
+  player = require('./entities/player')(game, player, dataIndex[level].player);
 
   game.player = player;
 
   game.walkLine = require('./entities/walkLine')(game);
-  game.objetive = require('./entities/objetive')(game, { x: 600, y: 100 });
+  game.objetive = require('./entities/objetive')(game, dataIndex[level].objetive);
+
+  function generateNpcs(){
+    var npcs = dataIndex[level].npcs;
+    for (var i = 0; i < npcs.length; i++){
+      require('./entities/person')(game, npcs[i]);
+    }
+  }
+
+  generateNpcs();
 
   require("./systems")(game);
   

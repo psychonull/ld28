@@ -26,14 +26,14 @@ $(function(){
     })
     .on('complete', function(){
       mumps.game = builder;
-      mumps._current = mumps.game();
+      mumps._current = mumps.game(1);
       mumps.finished = function(){
         mumps._current.stop();
         $("#cinema").show();
         $(".next", "#cinema").on("click", function(){
           mumps._current.destroy();
           $("#cinema").hide();
-          mumps._current = mumps.game();
+          mumps._current = mumps.game(mumps._current.level + 1);
         });
       };
     })

@@ -24,11 +24,11 @@ module.exports = oaky.System.extend({
           if(!guy.has('infectionProgress')){
             guy.set('infectionProgress', {
               progress: 0.01,
-              timeExposed: this.MAX_TIME_EXPOSED
+              timeExposed: this.MAX_TIME_EXPOSED - 0.01
             });  
           }
           else {
-            this._updateInfectionPercentage(guy, dt);
+            guy.get("infectionProgress").timeExposed -= dt/1000;
           }
           
         }
@@ -36,11 +36,6 @@ module.exports = oaky.System.extend({
       }
 
     }
-  },
-
-  _updateInfectionPercentage: function(guy, dt){
-    guy.get("infectionProgress").timeExposed -= dt/1000;
-    guy.get("infectionProgress").progress = (1 - guy.get("infectionProgress").timeExposed) / this.MAX_TIME_EXPOSED;
   },
 
   _contagionCalc: function(/*dt, distance, power*/){

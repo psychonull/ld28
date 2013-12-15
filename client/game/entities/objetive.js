@@ -1,9 +1,9 @@
 
-module.exports = function(game, pos){
+module.exports = function(game, options){
   
   var objetive = game.entities.make();
 
-  objetive.add("position", pos);
+  objetive.add("position", _.pick(options, 'x', 'y'));
   objetive.add("size", { width: 10, height: 10 });
 
   objetive.add("display", {
@@ -22,7 +22,7 @@ module.exports = function(game, pos){
 
   objetive.add('dynamic');
   objetive.add('objetive');
-  objetive.add("collision", 50);
+  objetive.add("collision", options.r || 50);
 
   return objetive;
 };

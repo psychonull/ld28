@@ -1,9 +1,11 @@
 
-module.exports = function(game, pos){
+module.exports = function(game, options){
   
   var person = game.entities.make();
 
-  person.add("position", pos || { x: 0, y: 0 });
+  var pos = (options && _.pick(options, "x", "y")) || { x: 0, y: 0 };
+
+  person.add("position", pos);
   person.add("velocity", { x: 0, y: 0 });
   //person.add("target", { x: 0, y: 0 });
   person.add("size", { width: 80, height: 120 });
@@ -61,6 +63,10 @@ module.exports = function(game, pos){
   person.add('npc');
   person.add('person');
   person.add("zindex", 2);
+
+  if(options && options.contagionFocus){
+    person.add("contagionFocus", options.contagionFocus);
+  }
 
   return person;
 };

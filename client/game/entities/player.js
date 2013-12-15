@@ -1,7 +1,10 @@
 
-module.exports = function(game, person){
+module.exports = function(game, person, options){
   
-  person.add("position", { x: 50, y: 50 });
+  person.add("position", { 
+    x: options.x || 50, 
+    y: options.y || 50 
+  });
   
   person.add("boundary", {
     min: {
