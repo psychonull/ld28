@@ -103,11 +103,13 @@ module.exports = {
     }
   }, {
     x: 265,
-    y: 100
+    y: 100,
+    inmune: true
   }, 
   {
     x: 319,
-    y: 500
+    y: 500,
+    inmune: true
   },
   {
     x: 830,
@@ -133,7 +135,8 @@ module.exports = {
         x: 500,
         y: 1060
       }
-    }
+    },
+    inmune: true
   },
   {
     x: 50,

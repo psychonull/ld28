@@ -1,5 +1,6 @@
 
-var Renderer = require('./index');
+var Renderer = require('./index'),
+  dataIndex = require("../../data/index");
 
 var RendererDynamic = module.exports = Renderer.extend({
 
@@ -8,7 +9,7 @@ var RendererDynamic = module.exports = Renderer.extend({
   initialize: function(/*options*/){ 
     this._super(RendererDynamic, arguments);
 
-    this.bg = this.ctx.createPattern(mumps.repository.bar_floor, 'repeat');
+    this.bg = null;
   },
 
   process: function(dt, entities) {
@@ -82,6 +83,10 @@ var RendererDynamic = module.exports = Renderer.extend({
     ctx.save();
     
     ctx.rect(0, 0, sc.width, sc.height);
+    if(!this.bg){
+      var bgResource = mumps.repository[dataIndex[this.game.level].background || 'bar_floor'];
+      this.bg = this.ctx.createPattern(bgResource, 'repeat');
+    }
     ctx.fillStyle = this.bg;
     ctx.translate(bgX, bgY);
     ctx.fill();
