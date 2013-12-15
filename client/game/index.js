@@ -26,7 +26,7 @@ $(function(){
     })
     .on('complete', function(){
       mumps.game = builder;
-      mumps._current = mumps.game(5);
+      mumps._current = mumps.game(3);
       mumps.manager = require('./manager')(mumps._current);
       mumps.finished = function(){
         mumps._current.stop();
