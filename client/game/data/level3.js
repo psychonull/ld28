@@ -75,8 +75,8 @@ module.exports = {
   }*/],
 
   objetive : {
-    x: 855,
-    y: 180,
+    x: 550,
+    y: 1345,
     r: 120
   },
 
@@ -96,6 +96,9 @@ module.exports = {
     },
     npc: {
       rest: [1,3]
+    },
+    contagionFocus: {
+      radius: 100
     }
   }, {
     x: 265,
@@ -131,8 +134,8 @@ module.exports = {
   }],
 
   player: {
-    x: 550,
-    y: 1345,
+    x: 815,
+    y: 230,
     speed: 5
   }
 };

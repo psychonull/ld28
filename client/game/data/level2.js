@@ -98,7 +98,8 @@ module.exports = {
       rest: [1,3]
     },
     contagionFocus: {
-      radius: 100
+      radius: 150,
+      power: 0.4
     }
   }, {
     x: 265,
@@ -122,9 +123,17 @@ module.exports = {
   },
   {
     x: 50,
-    y: 850,
-    npc: false,
-    angle: 300
+    y: 880,
+    boundary: {
+      min: {
+        x: 20,
+        y: 800
+      },
+      max: {
+        x: 500,
+        y: 1060
+      }
+    }
   },
   {
     x: 50,
