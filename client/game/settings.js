@@ -1,6 +1,6 @@
 
 module.exports = {
-    debug: false
+    debug: true
 
   , worldSize: {
       w: 2000, 
