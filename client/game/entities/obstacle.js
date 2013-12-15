@@ -26,7 +26,7 @@ module.exports = function(game, data){
       y: mumps.settings.worldSize.h
     }
   });
-
+/*
   obstacle.add("display", {
     type: "rect",
 
@@ -39,6 +39,20 @@ module.exports = function(game, data){
     strokeWidth: 2,
     fill: "blue"
 
+  });
+*/
+
+  obstacle.add("display", {
+    type: "sprite",
+    
+    x: 0,
+    y: 0,
+    width: data.w,
+    height: data.h,
+
+    sheet: "block",
+    animation: "idle",
+    index: 0
   });
 
   obstacle.add("dynamic");

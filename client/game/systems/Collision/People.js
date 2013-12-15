@@ -34,6 +34,12 @@ module.exports = oaky.System.extend({
           personA.remove("target");
           personB.remove("target");
 
+          personA.get("display").animation = "idle";
+          personA.get("display").index = 0;
+
+          personB.get("display").animation = "idle";
+          personB.get("display").index = 0;
+
           if (personA.is("player")){
             personA.set("velocity", { x: 0, y: 0 });
           }

@@ -18,12 +18,14 @@ module.exports = oaky.System.extend({
         var obstacle = obstacles[j];
 
         var collide = ( 
-            mumps.helpers.isNear(person, obstacle, 200) &&
             this.checkCollision(person, obstacle)
           ) ? true : false;
 
         if (collide){
           person.remove("target");
+
+          person.get("display").animation = "idle";
+          person.get("display").index = 0;
 
           if (person.is("player")){
             person.set("velocity", { x: 0, y: 0 });
@@ -53,9 +55,7 @@ module.exports = oaky.System.extend({
       height: obstacle.get("size").height
     };
 
-    var dist = mumps.helpers.circleRectangleCollideDistance(circle, rect);
-    var distanceSquared = (dist.x * dist.x) + (dist.y * dist.y);
-    var collide = distanceSquared < (circle.r * circle.r);
+    var collide = mumps.helpers.circleRectangleCollide(circle, rect);
 
     if (collide){
       person.get("position").x -= person.get("velocity").x;

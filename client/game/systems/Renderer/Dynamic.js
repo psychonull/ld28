@@ -116,19 +116,18 @@ var RendererDynamic = module.exports = Renderer.extend({
   drawDebug: function(entity, xView, yView, p, s){
     var ctx = this.ctx;
     var posC = mumps.helpers.getCenter(entity);
+
     //DEBUG COLLISIONS
     if (entity.has('collision')){
-
-
       var r = entity.get('collision');
 
       ctx.beginPath();
       ctx.arc(posC.x - xView, posC.y - yView, r, 0, 2 * Math.PI, false);
       ctx.strokeStyle = 'orange';
-      ctx.lineWidth = 2;
+      ctx.lineWidth = 3;
       ctx.stroke();
     }
-
+   
     //DEBUG POSITION AND SIZE
     ctx.beginPath();
     ctx.rect(p.x - xView, p.y - yView, s.width, s.height);
@@ -141,19 +140,11 @@ var RendererDynamic = module.exports = Renderer.extend({
       ctx.fill();
     }
     else {
-      ctx.strokeStyle = 'gray';
+      ctx.strokeStyle = 'red';
     }
     
-    ctx.lineWidth = 2;
+    ctx.lineWidth = 3;
     ctx.stroke();
-
-    if (entity.has('testPoint')){
-      var c = entity.get('testPoint');
-      ctx.beginPath();
-      ctx.arc(c.x - xView, c.y - yView, c.r, 0, 2 * Math.PI, false);
-      ctx.fillStyle = 'red';
-      ctx.fill();
-    }
 
     //DEBUG CONTAGION FOCUS
     if (entity.has("contagionFocus")){
