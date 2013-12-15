@@ -50,7 +50,7 @@ module.exports = function(level){
   $("body").css("overflow", "hidden");
   updateCameraSize();
 
-  var player = require('./entities/person')(game);
+  var player = require('./entities/person')(game, dataIndex[level].player);
   player = require('./entities/player')(game, player, dataIndex[level].player);
 
   game.player = player;

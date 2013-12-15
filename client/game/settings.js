@@ -20,6 +20,8 @@ module.exports = {
       contagionPower: 1,
     }
 
+  , defaultPersonSpeed: 1.5
+
   
   
 /*

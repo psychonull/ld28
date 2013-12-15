@@ -7,6 +7,7 @@ module.exports = function(game, options){
 
   person.add("position", pos);
   person.add("velocity", { x: 0, y: 0 });
+  person.add("speed", (options && options.speed) || mumps.settings.defaultPersonSpeed);
   //person.add("target", { x: 0, y: 0 });
   person.add("size", { width: 80, height: 120 });
   
