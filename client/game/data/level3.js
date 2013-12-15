@@ -79,6 +79,6 @@ module.exports = {
   player: {
     x: 160,
     y: 250,
-    speed: 5
+    speed: 10
   }
 };

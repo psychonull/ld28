@@ -10,7 +10,8 @@ $(function(){
     //sounds: require('./sounds'),
     settings: require('./settings'),
     Controls: Controls,
-    helpers: require("./helpers")
+    helpers: require("./helpers"),
+    manager: require('./manager')
   };
 
   loader
@@ -26,18 +27,17 @@ $(function(){
     })
     .on('complete', function(){
       mumps.game = builder;
-      mumps._current = mumps.game(3);
-      mumps.manager = require('./manager')(mumps._current);
+      mumps._current = mumps.game(1);
+      //mumps.manager = require('./manager')();
       mumps.finished = function(){
         mumps._current.stop();
-        $("#cinema").show();
-        $(".next", "#cinema").on("click", function(){
-          mumps._current.destroy();
-          $("#cinema").hide();
-          mumps._current = mumps.game(mumps._current.level + 1);
-        });
+        mumps.manager.show(mumps._current);
       };
     })
     .load();
 
+  $(mumps.manager).on('advancelevel', function(e, levelNbr){
+    mumps._current.destroy();
+    mumps._current = mumps.game(levelNbr);
+  });
 });
