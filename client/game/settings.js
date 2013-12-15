@@ -8,7 +8,8 @@ module.exports = {
     }
 
   , images: {
-    "bg": "images/bg.png"
+    "bg": "images/bg.png",
+    "person": "images/person.png"
   }
 
   , infection: {

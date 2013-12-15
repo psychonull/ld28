@@ -41,6 +41,10 @@ module.exports = function(game){
     })
   };
 
+  systems.animations = {
+    animations: require('./Animations').create()
+  };
+
   systems.factories = {
     obstaclesFactory: require('./Factory/Obstacles').create(),
     peopleFactory: require('./Factory/People').create()
@@ -65,6 +69,7 @@ module.exports = function(game){
   var order = [
       "camerasAndFacing"
     , "controls"
+    , "animations"
     , "factories"
     , "contagion"
     , "collisions"

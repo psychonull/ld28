@@ -15,6 +15,7 @@ module.exports = oaky.System.extend({
       var pos = entity.get('position');
 
       if (entity.is("spinning")){
+        //entity.get("display").animation = "idle";
         entity.set("velocity", {
           x: 0,
           y: 0
@@ -27,6 +28,10 @@ module.exports = oaky.System.extend({
         var gotTarget = (l < 10) ? true : false;
 
         if (gotTarget){
+          
+          entity.get("display").animation = "idle";
+          entity.get("display").index = 0;
+          
           entity.remove("target");
           entity.set("velocity", {
             x: 0,
@@ -34,6 +39,11 @@ module.exports = oaky.System.extend({
           });
         }
         else {
+          if (entity.get("display").animation === "idle"){
+            entity.get("display").animation = "walking";
+            entity.get("display").index = 0;
+          }
+
           var n = mumps.helpers.vectors.normalize(pc, entity.get("target"));
         
           entity.set("velocity", {

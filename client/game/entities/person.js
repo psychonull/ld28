@@ -6,7 +6,7 @@ module.exports = function(game, pos){
   person.add("position", pos || { x: 0, y: 0 });
   person.add("velocity", { x: 0, y: 0 });
   //person.add("target", { x: 0, y: 0 });
-  person.add("size", { width: 30, height: 70 });
+  person.add("size", { width: 80, height: 120 });
   
   person.add("angle", 0);
   person.add("scale", { x: 1, y: 1 });
@@ -23,6 +23,7 @@ module.exports = function(game, pos){
     }
   });
 
+/*
   person.add("display", {
     type: "rect",
 
@@ -36,8 +37,24 @@ module.exports = function(game, pos){
     fill: "silver"
 
   });
+*/
+  
+  person.add("display", {
+    type: "sprite",
+    
+    x: 0,
+    y: 0,
+    width: 80,
+    height: 120,
 
-  person.add("collision", 30);
+    sheet: "person",
+    animation: "idle",
+    index: 0,
+    loop: true,
+    frameTime: 200
+  });
+
+  person.add("collision", 45);
 
   person.add("dynamic");
 

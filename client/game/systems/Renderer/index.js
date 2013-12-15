@@ -1,5 +1,5 @@
 
-var sprites = null; //require('../../spriteSheets');
+var sprites = require('../../spriteSheets');
 
 module.exports = oaky.System.extend({
 
