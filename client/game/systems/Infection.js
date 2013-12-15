@@ -3,6 +3,9 @@ module.exports = oaky.System.extend({
 
   uses: ["infectionProgress"],
 
+  EXPOSURE_COOLDOWN: mumps.settings.infection.exposureCooldown,
+  MAX_TIME_EXPOSED: mumps.settings.infection.maxExposureTime,
+
   initialize: function(){ 
   },
 
@@ -24,19 +27,40 @@ module.exports = oaky.System.extend({
         }
       }
       if (!anySickGuyAround){
-        this._decreaseInfection(dt);
+        this._decreaseInfection(entity, dt);
+        this._updateInfectionPercentage(entity, dt, "cooldown");
+      }
+      else {
+        this._updateInfectionPercentage(entity, dt, "timeExposed");
       }
 
       this._updateSickStatus(entity);
     }
   },
 
-  _decreaseInfection: function(/*dt*/){
-
+  _decreaseInfection: function(entity, dt){
+    var infectionProgress = entity.get("infectionProgress");
+    infectionProgress.exposureTime = 0;
+    if (!infectionProgress.cooldown){
+      infectionProgress.cooldown = this.EXPOSURE_COOLDOWN * infectionProgress.progress;
+    }
+    else {
+      infectionProgress.cooldown -= dt/1000;
+    }
   },
 
   _contagionCalc: function(/*dt, distance, power*/){
     // la curva la define la func
+  },
+
+  _updateInfectionPercentage: function(entity, dt, basedIn){
+    //var infectionProgress = entity.get("infectionProgress");
+    if (basedIn === "cooldown"){
+      entity.get("infectionProgress").progress = (entity.get("infectionProgress")[basedIn]) / this.EXPOSURE_COOLDOWN;
+    }
+    else {
+      entity.get("infectionProgress").progress = (1 - entity.get("infectionProgress")[basedIn]) / this.MAX_TIME_EXPOSED;
+    }
   },
 
   _updateSickStatus: function(entity){

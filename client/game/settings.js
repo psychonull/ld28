@@ -15,7 +15,7 @@ module.exports = {
       initialInfections: 1,
       maxExposureTime: 1,
       exposureCooldown: 3,
-      contagionRadius: 70,
+      contagionRadius: 100,
       contagionPower: 2,
     }
 
