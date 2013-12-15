@@ -26,34 +26,32 @@ module.exports = function(game, data){
       y: mumps.settings.worldSize.h
     }
   });
-/*
-  obstacle.add("display", {
-    type: "rect",
 
-    x: 0,
-    y: 0,
-    width: data.w,
-    height: data.h,
+  if (!data.type){
+    obstacle.add("display", {
+      type: "rect",
 
-    strokeColor: "red",
-    strokeWidth: 2,
-    fill: "blue"
+      x: 0,
+      y: 0,
+      width: data.w,
+      height: data.h,
+      fill: "black"
+    });
+  }
+  else {
+    obstacle.add("display", {
+      type: "sprite",
+      
+      x: 0,
+      y: 0,
+      width: data.w,
+      height: data.h,
 
-  });
-*/
-
-  obstacle.add("display", {
-    type: "sprite",
-    
-    x: 0,
-    y: 0,
-    width: data.w,
-    height: data.h,
-
-    sheet: "block",
-    animation: "idle",
-    index: 0
-  });
+      sheet: "bar",
+      animation: data.type,
+      index: 0
+    });
+  }
 
   obstacle.add("dynamic");
   obstacle.add('obstacle');

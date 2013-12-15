@@ -8,7 +8,7 @@ var RendererDynamic = module.exports = Renderer.extend({
   initialize: function(/*options*/){ 
     this._super(RendererDynamic, arguments);
 
-    this.bg = this.ctx.createPattern(mumps.repository.bg, 'repeat');
+    this.bg = this.ctx.createPattern(mumps.repository.bar_floor, 'repeat');
   },
 
   process: function(dt, entities) {
@@ -65,7 +65,7 @@ var RendererDynamic = module.exports = Renderer.extend({
         ctx.restore();
       }
 
-      this.drawDebug(entity, xView, yView, p, s);
+      //this.drawDebug(entity, xView, yView, p, s);
     } 
   },
 
