@@ -35,21 +35,39 @@ module.exports = {
     w: WORLD.w,
     h: 16
   }, // fin paredes
-  {
+  { // techito
     x: 0,
     y: 0,
     w: 450,
     h: 140
   },
-  {
+  { // barrera
     x: 1914,
     y: 100,
     w: WORLD.w - 1914,
     h: WORLD.h - 100
+  },
+  { // auto
+    x:382,
+    y:334,
+    w:429,
+    h:171
+  },
+  { // tacho
+    x:1164,
+    y:696,
+    w:283,
+    h:186
   }
   ],
 
-  npcs: [],
+  npcs: [
+  {
+    x: 1800,
+    y: 350,
+    npc: false,
+    angle: 90
+  }],
 
   objetive : {
     x: 1850,
