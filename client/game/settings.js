@@ -16,7 +16,7 @@ module.exports = {
       maxExposureTime: 1,
       exposureCooldown: 3,
       contagionRadius: 100,
-      contagionPower: 2,
+      contagionPower: 1,
     }
 
   

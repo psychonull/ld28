@@ -15,6 +15,7 @@ module.exports = oaky.System.extend({
 
       var sickPeople = this.game.entities.get('contagionFocus');
       var anySickGuyAround = false;
+      var sickGuyContagionPower = null;
       for (var j = 0; j < sickPeople.length; j++){
         var sickGuy = sickPeople[j];
         
@@ -23,6 +24,7 @@ module.exports = oaky.System.extend({
         //if(mumps.helpers.isPointInCircle(sickGuyCenter, entityCenter, contagionFocus.radius)){
         if(mumps.helpers.isNear(entity, sickGuy, sickGuy.get("contagionFocus").radius)){
           anySickGuyAround = true;
+          sickGuyContagionPower = sickGuy.get("contagionFocus").power;
           break;
         }
       }
@@ -31,7 +33,7 @@ module.exports = oaky.System.extend({
         this._updateInfectionPercentage(entity, dt, "cooldown");
       }
       else {
-        this._updateInfectionPercentage(entity, dt, "timeExposed");
+        this._updateInfectionPercentage(entity, dt, "timeExposed", sickGuyContagionPower);
       }
 
       this._updateSickStatus(entity);
@@ -53,13 +55,13 @@ module.exports = oaky.System.extend({
     // la curva la define la func
   },
 
-  _updateInfectionPercentage: function(entity, dt, basedIn){
+  _updateInfectionPercentage: function(entity, dt, basedIn, power){
     //var infectionProgress = entity.get("infectionProgress");
     if (basedIn === "cooldown"){
       entity.get("infectionProgress").progress = (entity.get("infectionProgress")[basedIn]) / this.EXPOSURE_COOLDOWN;
     }
     else {
-      entity.get("infectionProgress").progress = (1 - entity.get("infectionProgress")[basedIn]) / this.MAX_TIME_EXPOSED;
+      entity.get("infectionProgress").progress = (power || 1) * (1 - entity.get("infectionProgress")[basedIn]) / this.MAX_TIME_EXPOSED;
     }
   },
 
