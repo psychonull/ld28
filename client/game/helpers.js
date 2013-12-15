@@ -292,9 +292,21 @@ module.exports = {
     },
 
     rgb_col_perc: function(p){
-        var red = p<50 ? 255 : Math.round(256 - (p-50)*5.12);
-        var green = p>50 ? 255 : Math.round((p)*5.12);
-        return [red, green, 0];
+        //var red = p<50 ? 255 : Math.round(256 - (p-50)*5.12);
+        //var green = p>50 ? 255 : Math.round((p)*5.12);
+        //return [red, green, 0];
+        if (p=== 0) { return [255, 255, 255]; }
+        return [ p * 255 / 100 ,0,0];
+    },
+
+    rgb_fade: function(from, to, petcentage){
+      var diffRed = to[0] - from[0];
+      var diffGreen = to[1] - from[1];
+      var diffBlue = to[2] - from[2];
+
+      return [(diffRed * petcentage) + from[0],
+              (diffGreen * petcentage) + from[1],
+              (diffBlue * petcentage) + from[2] ];
     }
 
 

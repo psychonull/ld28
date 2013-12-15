@@ -18,7 +18,8 @@ module.exports = oaky.System.extend({
       var entity = entities[i];
       var aux = 0;
       var animationIndex = 1;
-      var color = mumps.helpers.colors.rgb_col_perc(infectionPercentage * 100);
+      //var color = mumps.helpers.colors.rgb_col_perc(infectionPercentage * 100);
+      var color = mumps.helpers.colors.rgb_fade([255, 255, 255],[255, 102, 51], infectionPercentage);
       for (var j = 0; j < animationsLength; j++){
         if (infectionPercentage > aux){
           animationIndex = j + 1;
@@ -32,7 +33,8 @@ module.exports = oaky.System.extend({
       entity.get("display").animation = 'infection_bar' + animationIndex; 
       entity.get("display").replaceColor = {
         from: [255, 255, 255],
-        to: color
+        to: color,
+        tolerance: 100
       };
     }
   }

@@ -147,7 +147,7 @@ module.exports = oaky.System.extend({
     if (display.replaceColor){
       var colorFrom = display.replaceColor.from,
         colorTo = display.replaceColor.to,
-        colorTolerance = display.replaceColor.colorTolerance || 0;
+        colorTolerance = display.replaceColor.tolerance || 0;
       var newImg = this.recolorImage(img, colorFrom[0], colorFrom[1], colorFrom[2], colorTo[0], colorTo[1], colorTo[1], colorTolerance);
       ctx.drawImage(newImg.canvas, sp.x, sp.y, sp.w, sp.h, x, y, sw, sh);
     }
@@ -160,7 +160,7 @@ module.exports = oaky.System.extend({
 
   },
 
-  recolorImage: function(img,oldRed,oldGreen,oldBlue,newRed,newGreen,newBlue){
+  recolorImage: function(img,oldRed,oldGreen,oldBlue,newRed,newGreen,newBlue, tol){
 
         var c = document.createElement('canvas');
         var ctx=c.getContext("2d");
@@ -169,6 +169,10 @@ module.exports = oaky.System.extend({
 
         c.width = w;
         c.height = h;
+
+        var isInRange = function(a, tol, b){
+          return a - tol <= b && a + tol >= b; 
+        };
 
         // draw the image on the temporary canvas
         ctx.drawImage(img, 0, 0, w, h);
@@ -181,9 +185,9 @@ module.exports = oaky.System.extend({
         for (var i=0;i<imageData.data.length;i+=4)
           {
               // is this pixel the old rgb?
-              if(imageData.data[i]===oldRed &&
-                 imageData.data[i+1]===oldGreen &&
-                 imageData.data[i+2]===oldBlue
+              if(isInRange(imageData.data[i],tol,oldRed) &&
+                 isInRange(imageData.data[i+1],tol,oldGreen) &&
+                 isInRange(imageData.data[i+2],tol,oldBlue)
               ){
                   // change to your new rgb
                   imageData.data[i]=newRed;

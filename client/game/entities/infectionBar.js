@@ -20,11 +20,7 @@ module.exports = function(game){
     animation: "infection_bar1",
     index: 0,
     loop: false,
-    frameTime: 200,
-    replaceColor: {
-      from: [255, 255, 255],
-      to: [255, 0, 0]
-    }
+    frameTime: 200
 
   });
 
