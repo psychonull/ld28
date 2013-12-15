@@ -58,8 +58,8 @@ module.exports = oaky.System.extend({
     var collide = distanceSquared < (circle.r * circle.r);
 
     if (collide){
-      person.get("position").x -= person.get("velocity").x - dist.x;
-      person.get("position").y -= person.get("velocity").y - dist.y;
+      person.get("position").x -= person.get("velocity").x;
+      person.get("position").y -= person.get("velocity").y;
     }
 
     return collide;

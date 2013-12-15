@@ -64,9 +64,9 @@ module.exports = function(game){
       "camerasAndFacing"
     , "controls"
     , "factories"
-    , "movement"
     , "contagion"
     , "collisions"
+    , "movement"
     , "bounds"
     , "rendering"
   ];

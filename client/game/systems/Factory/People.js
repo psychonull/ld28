@@ -6,7 +6,7 @@ module.exports = oaky.System.extend({
   uses: ["person"],
 
   initialize: function(){ 
-    this.peopleMax = 30;
+    this.peopleMax = 60;
     this.startingInfectedPeople = 1;
   },
 

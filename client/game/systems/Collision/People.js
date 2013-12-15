@@ -25,7 +25,11 @@ module.exports = oaky.System.extend({
           ) ? true : false;
 
         if (collide){
-          mumps.helpers.applyCircleCollisionBounce(personA, personB);
+          personA.get("position").x -= personA.get("velocity").x;
+          personA.get("position").y -= personA.get("velocity").y;
+
+          personB.get("position").x -= personB.get("velocity").x;
+          personB.get("position").y -= personB.get("velocity").y;
 
           personA.remove("target");
           personB.remove("target");

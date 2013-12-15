@@ -14,7 +14,7 @@ module.exports = function(game, data){
   });
   
   obstacle.add("scale", { x: 1, y: 1 });
-  obstacle.add("mass", 1);
+  obstacle.add("mass", 1000);
 
   obstacle.add("boundary", {
     min: {

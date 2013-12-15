@@ -4,7 +4,7 @@ module.exports = oaky.System.extend({
   uses: ["position", "velocity"],
 
   initialize: function(){ 
-    
+    this.velocity = 1;
   },
 
   process: function(dt, entities) {
@@ -37,8 +37,8 @@ module.exports = oaky.System.extend({
           var n = mumps.helpers.vectors.normalize(pc, entity.get("target"));
         
           entity.set("velocity", {
-            x: n.x * 2,
-            y: n.y * 2
+            x: n.x * this.velocity,
+            y: n.y * this.velocity
           });
         }
       }
