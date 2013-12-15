@@ -22,7 +22,7 @@ module.exports = {
     }
 
   , defaultPersonSpeed: 1.5
-
+  , defaultNPCRest: [0, 1]
   
   
 /*

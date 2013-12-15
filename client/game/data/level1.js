@@ -81,7 +81,21 @@ module.exports = {
 
   npcs: [{
     x: 531,
-    y: 934
+    y: 934,
+    speed: 3,
+    boundary: {
+      min: {
+        x: 390,
+        y: 800
+      },
+      max: {
+        x: 781,
+        y: 1060
+      }
+    },
+    npc: {
+      rest: [1,3]
+    }
   }, {
     x: 265,
     y: 100
