@@ -11,7 +11,7 @@ module.exports = function(game, options){
   //person.add("target", { x: 0, y: 0 });
   person.add("size", { width: 80, height: 120 });
   
-  person.add("angle", 0);
+  person.add("angle", options && _.has(options,"angle") ? options.angle : 0);
   person.add("scale", { x: 1, y: 1 });
   person.add("mass", 0.01);
 
@@ -61,7 +61,9 @@ module.exports = function(game, options){
 
   person.add("dynamic");
 
-  person.add('npc');
+  if (options && options.hasAI && options.hasAI === true || !_.has(options,"hasAI")){
+    person.add('npc');
+  }
   person.add('person');
   person.add("zindex", 2);
 
