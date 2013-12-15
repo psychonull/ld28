@@ -2,7 +2,6 @@
 module.exports = function(game){
   var walkLine = game.entities.make();
   
-  walkLine.add("dynamic");
   walkLine.add("size", 'TODO: remove this');
 
   walkLine.add("display", { 
@@ -13,6 +12,8 @@ module.exports = function(game){
   });
 
   walkLine.add('walkControl');
+  walkLine.add("dynamic");
+  walkLine.add("zindex", 3);
 
   return walkLine;
 };

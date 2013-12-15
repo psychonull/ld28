@@ -4239,9 +4239,33 @@ h5 {
   height: 15%;
   border: 1px solid red;
 }
-#controls .aim {
-  right: 0;
-}
-#controls .shoot {
+#cinema {
+  position: absolute;
+  top: 0;
   left: 0;
+  background: rgba(255,255,255,0.4);
+}
+
+#cinema .state {
+  height: auto;
+  height: 90%;
+  width: 80%;
+  margin: 2% auto;
+  border: solid 1px black;
+  background: silver;
+  border-radius: 20px;
+}
+
+#cinema .next {
+  position: absolute;
+  right: 15%;
+  bottom: 10%;
+  padding: 2%;
+  background-color: rgb(99, 219, 89);
+  border-radius: 10px;
+  border: 3px solid white;
+  box-shadow: 3px 3px 3px rgba(0,0,0,0.4);
+  font-size: 3em;
+  color: white;
+  font-family: cursive;
 }

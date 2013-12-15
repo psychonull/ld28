@@ -10,7 +10,7 @@ module.exports = function(game, pos){
   
   person.add("angle", 0);
   person.add("scale", { x: 1, y: 1 });
-  person.add("mass", 1);
+  person.add("mass", 0.01);
 
   person.add("boundary", {
     min: {
@@ -43,6 +43,7 @@ module.exports = function(game, pos){
 
   person.add('npc');
   person.add('person');
+  person.add("zindex", 2);
 
   return person;
 };
