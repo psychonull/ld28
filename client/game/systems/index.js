@@ -42,8 +42,7 @@ module.exports = function(game){
   };
 
   systems.factories = {
-    obstaclesFactory: require('./Factory/Obstacles').create(),
-    peopleFactory: require('./Factory/People').create()
+    obstaclesFactory: require('./Factory/Obstacles').create()
   };
 
   systems.bounds = {
