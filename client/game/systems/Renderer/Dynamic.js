@@ -65,7 +65,9 @@ var RendererDynamic = module.exports = Renderer.extend({
         ctx.restore();
       }
 
-      this.drawDebug(entity, xView, yView, p, s);
+      if (mumps.settings.debug){
+        this.drawDebug(entity, xView, yView, p, s);
+      }
     } 
   },
 

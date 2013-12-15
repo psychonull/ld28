@@ -127,6 +127,10 @@ module.exports = function(level){
 
   game.start();
 
+  if(mumps.settings.debug){
+    require('./debug').activate(game);
+  }
+
   game.on("after:destroy", function(){
     controls.off();
   });
