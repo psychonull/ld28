@@ -4,6 +4,7 @@ module.exports = {
     w: 1000, 
     h: 1400
   },
+  spriteSheet: "bar",
 
   obstacles : [{
     x: 0,

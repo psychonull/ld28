@@ -27,7 +27,7 @@ module.exports = function(game, data){
     }
   });
 
-  if (!data.type){
+  if (!data.type || !data.spriteSheet){
     obstacle.add("display", {
       type: "rect",
 
@@ -47,7 +47,7 @@ module.exports = function(game, data){
       width: data.w,
       height: data.h,
 
-      sheet: "bar",
+      sheet: data.spriteSheet,
       animation: data.type,
       index: 0
     });
