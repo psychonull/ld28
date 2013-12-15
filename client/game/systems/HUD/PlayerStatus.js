@@ -11,7 +11,7 @@ module.exports = oaky.System.extend({
   process: function(dt, entities) {
     var infectionPercentage = this.game.player.has("infectionProgress") ? 
                               this.game.player.get("infectionProgress").progress :
-                              0;
+                              (this.game.player.has("contagionFocus") ? 100 : 0);
     var animationsLength = _.keys(hudSpritesheet.animations).length;
     var percentagePerImage = 1 / animationsLength;
     for(var i=0; i<entities.length; i++) {
