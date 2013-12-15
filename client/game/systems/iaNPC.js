@@ -3,6 +3,11 @@ module.exports = oaky.System.extend({
 
   uses: ["npc"],
 
+  // npc { ideas:
+  //    restFactor: 0 is no rest
+  //    angleSmoothing 0 none 359 max
+  //    distanceFactor
+  //}
   initialize: function(){ 
     
   },

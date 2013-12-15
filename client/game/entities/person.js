@@ -15,16 +15,21 @@ module.exports = function(game, options){
   person.add("scale", { x: 1, y: 1 });
   person.add("mass", 0.01);
 
-  person.add("boundary", {
-    min: {
-      x: 0,
-      y: 0
-    },
-    max: {
-      x: mumps.settings.worldSize.w,
-      y: mumps.settings.worldSize.h
-    }
-  });
+  if (options && options.boundary){
+    person.add("boundary", options.boundary);
+  }
+  else {
+    person.add("boundary", {
+      min: {
+        x: 0,
+        y: 0
+      },
+      max: {
+        x: mumps.settings.worldSize.w,
+        y: mumps.settings.worldSize.h
+      }
+    });  
+  }
 
 /*
   person.add("display", {

@@ -76,8 +76,17 @@ module.exports = {
   npcs: [{
     x: 531,
     y: 934,
-    hasAI: false,
-    angle: 90
+    speed: 3,
+    boundary: {
+      min: {
+        x: 390,
+        y: 800
+      },
+      max: {
+        x: 781,
+        y: 1060
+      }
+    }
   }, {
     x: 265,
     y: 118
