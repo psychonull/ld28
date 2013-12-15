@@ -25,7 +25,8 @@ module.exports = function(game){
   };
 
   systems.collisions = {
-    peopleCollision: require('./Collision/People').create()
+    peopleCollision: require('./Collision/People').create(),
+    peopleObstaclesCollision: require('./Collision/PeopleObstacles').create()
   };
 
   systems.contagion = {
@@ -39,6 +40,7 @@ module.exports = function(game){
   };
 
   systems.factories = {
+    obstaclesFactory: require('./Factory/Obstacles').create(),
     peopleFactory: require('./Factory/People').create()
   };
 

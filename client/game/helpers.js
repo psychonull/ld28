@@ -13,6 +13,35 @@ module.exports = {
     );
   },
 
+  circleRectangleCollide: function(circle, rectangle){
+    var dist = this.circleRectangleCollideDistance(circle, rectangle);
+     
+    // If the distance is less than the circle's radius, an intersection occurs
+    var distanceSquared = (dist.x * dist.x) + (dist.y * dist.y);
+    return distanceSquared < (circle.r * circle.r);
+  },
+
+  circleRectangleCollideDistance: function(circle, rectangle){
+    // limits value to the range min..max
+    function clamp(val, min, max) {
+        return Math.max(min, Math.min(max, val));
+    }
+     
+    // Find the closest point to the circle within the rectangle
+    // Assumes axis alignment! ie rect must not be rotated
+    var closestX = clamp(circle.x, rectangle.x, rectangle.x + rectangle.width);
+    var closestY = clamp(circle.y, rectangle.y, rectangle.y + rectangle.height);
+     
+    // Calculate the distance between the circle's center and this closest point
+    var distanceX = circle.x - closestX;
+    var distanceY = circle.y - closestY;
+
+    return {
+      x: distanceX,
+      y: distanceY
+    };
+  },
+
   // By position (center pos and radius)
   circlesCollide: function(x1, y1, r1, x2, y2, r2) {
     var dx = x1 - x2;

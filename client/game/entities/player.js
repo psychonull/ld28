@@ -19,6 +19,7 @@ module.exports = function(game, person){
   person.add("dynamic");
   person.add('player');
   person.remove('npc');
+  person.add("zindex", 4);
 
   return person;
 };
