@@ -75,7 +75,8 @@ module.exports = {
 
   npcs: [{
     x: 531,
-    y: 934
+    y: 934,
+    speed: 0
   }, {
     x: 265,
     y: 118
