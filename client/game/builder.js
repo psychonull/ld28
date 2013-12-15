@@ -27,6 +27,7 @@ module.exports = function(){
 
     $('.game-ctn')
       .add('.main')
+      .add('#cinema')
       .width(game.size.width)
       .height(game.size.height);
 
@@ -51,6 +52,7 @@ module.exports = function(){
   game.player = player;
 
   game.walkLine = require('./entities/walkLine')(game);
+  game.objetive = require('./entities/objetive')(game, { x: 600, y: 100 });
 
   require("./systems")(game);
   

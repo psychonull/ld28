@@ -57,7 +57,10 @@ Mouse.prototype.off = function(evName){
         this.events[ev].length = 0;
       }
     }
+
+    return;
   }
+  
   if (!this.events[evName]){
     this.events[evName].length = 0;
   }

@@ -25,7 +25,17 @@ $(function(){
       window.console.log('LOADING > ' + prg);
     })
     .on('complete', function(){
-      mumps.game = builder();
+      mumps.game = builder;
+      mumps._current = mumps.game();
+      mumps.finished = function(){
+        mumps._current.stop();
+        $("#cinema").show();
+        $(".next", "#cinema").on("click", function(){
+          mumps._current.destroy();
+          $("#cinema").hide();
+          mumps._current = mumps.game();
+        });
+      };
     })
     .load();
 

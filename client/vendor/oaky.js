@@ -421,8 +421,10 @@
 				  },
 				
 				  gameRun: function(){
-				    if (this.gameTime.tick()) { this.loop(); }
-				    this.tLoop = window.requestAnimationFrame(this.boundGameRun);
+				  	if (!this.paused){
+					    if (this.gameTime.tick()) { this.loop(); }
+					    this.tLoop = window.requestAnimationFrame(this.boundGameRun);
+				    }
 				  },
 				
 				  destroy: function(){

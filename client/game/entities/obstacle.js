@@ -45,7 +45,5 @@ module.exports = function(game, data){
   obstacle.add('obstacle');
   obstacle.add("zindex", 1);
 
-  obstacle.add("infectionProgress", 0);
-
   return obstacle;
 };
