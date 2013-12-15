@@ -10,6 +10,16 @@ module.exports = {
   , images: {
     "bg": "images/bg.png"
   }
+
+  , infection: {
+      initialInfections: 1,
+      maxExposureTime: 1,
+      exposureCooldown: 3,
+      contagionRadius: 70,
+      contagionPower: 2,
+    }
+
+  
   
 /*
   , soundsUrl: "sounds"

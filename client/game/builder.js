@@ -107,4 +107,5 @@ module.exports = function(){
     controls.off();
   });
 
+  return game;
 };

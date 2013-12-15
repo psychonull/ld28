@@ -45,7 +45,5 @@ module.exports = function(game, pos){
   person.add('person');
   person.add("zindex", 2);
 
-  person.add("infectionProgress", 0);
-
   return person;
 };
