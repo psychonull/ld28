@@ -36,6 +36,10 @@ module.exports = oaky.System.extend({
             x: 0,
             y: 0
           });
+          if(entity.is("npc")){
+            var restRange = entity.get("npc").rest;
+            entity.set("rest", _.random(restRange[0], restRange[1]));
+          }
         }
         else {
           if (entity.get("display").animation === "idle"){

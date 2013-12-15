@@ -86,6 +86,9 @@ module.exports = {
         x: 781,
         y: 1060
       }
+    },
+    npc: {
+      rest: [1,3]
     }
   }, {
     x: 265,

@@ -21,7 +21,8 @@ module.exports = function(game){
 
   systems.movement = {
     iaNPC: require('./iaNPC').create(),
-    movement: require('./Movement').create()
+    movement: require('./Movement').create(),
+    rest: require('./Rest').create()
   };
 
   systems.collisions = {

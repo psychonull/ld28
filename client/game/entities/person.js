@@ -66,9 +66,10 @@ module.exports = function(game, options){
 
   person.add("dynamic");
 
-  if (options && options.hasAI && options.hasAI === true || !_.has(options,"hasAI")){
-    person.add('npc');
+  if (options && options.npc || !_.has(options,"npc")){ // npc by default
+    person.add('npc', _.defaults(options.npc || {}, { rest: mumps.settings.defaultNPCRest }));
   }
+
   person.add('person');
   person.add("zindex", 2);
 
