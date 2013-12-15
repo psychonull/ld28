@@ -289,6 +289,12 @@ module.exports = {
 
       //Return a CSS HSL string
       return 'hsl('+c+',100%,50%)';
+    },
+
+    rgb_col_perc: function(p){
+        var red = p<50 ? 255 : Math.round(256 - (p-50)*5.12);
+        var green = p>50 ? 255 : Math.round((p)*5.12);
+        return [red, green, 0];
     }
 
 

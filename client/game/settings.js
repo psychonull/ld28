@@ -10,7 +10,8 @@ module.exports = {
   , images: {
     "person": "images/person.png",
     "bar": "images/bar.png",
-    "bar_floor": "images/bar_floor.png"
+    "bar_floor": "images/bar_floor.png",
+    "hud": "images/face.png"
   }
 
   , infection: {

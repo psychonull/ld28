@@ -54,6 +54,10 @@ module.exports = function(game){
     boundaries: require('./Boundaries').create()
   };
 
+  systems.HUD = {
+    playerStatus: require('./HUD/PlayerStatus').create()
+  };
+
   systems.rendering = {
 
     rendererDynamic: require('./Renderer/Dynamic').create({
@@ -75,6 +79,7 @@ module.exports = function(game){
     , "collisions"
     , "movement"
     , "bounds"
+    , "HUD"
     , "rendering"
   ];
 

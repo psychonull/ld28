@@ -95,6 +95,9 @@ module.exports = {
     },
     npc: {
       rest: [1,3]
+    },
+    contagionFocus: {
+      radius: 100
     }
   }, {
     x: 265,

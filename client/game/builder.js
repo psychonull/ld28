@@ -74,6 +74,8 @@ module.exports = function(level){
 
   generateNpcs();
 
+  require('./entities/infectionBar')(game);
+  
   require("./systems")(game);
   
   var controls = new mumps.Controls({
