@@ -133,16 +133,17 @@ var RendererDynamic = module.exports = Renderer.extend({
     ctx.beginPath();
     ctx.rect(p.x - xView, p.y - yView, s.width, s.height);
 
-        //DEBUG INFECTION
-        if (entity.has("infectionProgress")){
-          var ip = entity.get("infectionProgress").progress;
-          ctx.strokeStyle = mumps.helpers.colors.hsl_col_perc(1 - ip, 0, 100);
-          ctx.fillStyle = mumps.helpers.colors.hsl_col_perc(1 - ip, 0, 100);
-          ctx.fill();
-        }
-        else {
-          ctx.strokeStyle = 'gray';
-        }
+    //DEBUG INFECTION
+    if (entity.has("infectionProgress")){
+      var ip = entity.get("infectionProgress").progress;
+      ctx.strokeStyle = mumps.helpers.colors.hsl_col_perc(1 - ip, 0, 100);
+      ctx.fillStyle = mumps.helpers.colors.hsl_col_perc(1 - ip, 0, 100);
+      ctx.fill();
+    }
+    else {
+      ctx.strokeStyle = 'gray';
+    }
+    
     ctx.lineWidth = 2;
     ctx.stroke();
 

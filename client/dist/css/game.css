@@ -3525,12 +3525,16 @@ body {
   -o-animation-duration: 0.25s;
   animation-duration: 0.25s;
 }
+
+
+
 html,
 body {
   min-height: 100%;
   height: auto !important;
   height: 100%;
   overflow: hidden;
+  background: black;
 }
 * {
   -webkit-touch-callout: none;
@@ -4206,6 +4210,8 @@ h5 {
     opacity: 0.3;
   }
 }
+
+
 /* GAME */
 .main {
   margin: 0 auto;
@@ -4213,32 +4219,25 @@ h5 {
   -khtml-user-select: none;
   -webkit-user-select: none;
   -o-user-select: none;
+  background-color: #FFF;
 }
+
 .ctn {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: #FFF;
   padding: 0;
 }
+
 .game-ctn {
   position: relative;
   z-index: 1;
 }
-.game-ctn .btn-pause {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
+
 .game-ctn canvas {
   position: absolute;
   top: 0;
   left: 0;
 }
-#controls .control {
-  position: absolute;
-  bottom: 0;
-  width: 15%;
-  height: 15%;
-  border: 1px solid red;
-}
+
 #cinema {
   position: absolute;
   top: 0;

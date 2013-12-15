@@ -37,7 +37,7 @@ module.exports = function(game, data){
 
     strokeColor: "red",
     strokeWidth: 2,
-    fill: "gray"
+    fill: "blue"
 
   });
 

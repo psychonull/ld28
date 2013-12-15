@@ -29,6 +29,13 @@ module.exports = function(level){
       height: $doc.height()
     };
 
+    if (mumps.settings.worldSize.w < game.size.width){
+      game.size.width = mumps.settings.worldSize.w;
+    }
+    if (mumps.settings.worldSize.h < game.size.height){
+      game.size.h = mumps.settings.worldSize.h;
+    }
+    
     $('.game-ctn')
       .add('.main')
       .add('#cinema')
