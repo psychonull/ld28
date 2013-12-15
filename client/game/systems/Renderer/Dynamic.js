@@ -65,7 +65,7 @@ var RendererDynamic = module.exports = Renderer.extend({
         ctx.restore();
       }
 
-      //this.drawDebug(entity, xView, yView, p, s);
+      this.drawDebug(entity, xView, yView, p, s);
     } 
   },
 

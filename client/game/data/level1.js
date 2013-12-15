@@ -75,9 +75,9 @@ module.exports = {
   }*/],
 
   objetive : {
-    x: 885,
-    y: 154,
-    r: 100
+    x: 855,
+    y: 180,
+    r: 120
   },
 
   npcs: [{
@@ -103,6 +103,34 @@ module.exports = {
   }, {
     x: 265,
     y: 100
+  }, 
+  {
+    x: 319,
+    y: 500
+  },
+  {
+    x: 830,
+    y: 980,
+    npc: false,
+    angle: 200
+  },
+  {
+    x: 824,
+    y: 752,
+    npc: false,
+    angle: 90
+  },
+  {
+    x: 50,
+    y: 850,
+    npc: false,
+    angle: 300
+  },
+  {
+    x: 50,
+    y: 670,
+    npc: false,
+    angle: 95
   }],
 
   player: {
