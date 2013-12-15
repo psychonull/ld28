@@ -43,6 +43,7 @@ module.exports = function(game, data){
 
   obstacle.add("dynamic");
   obstacle.add('obstacle');
+  obstacle.add("zindex", 1);
 
   obstacle.add("infectionProgress", 0);
 
