@@ -4,8 +4,8 @@ module.exports = function(game){
   var infectionBar = game.entities.make();
 
   infectionBar.add("position", {
-    x: 10,
-    y: 10
+    x: -50,
+    y: game.size.height - 230
   });
 
   infectionBar.add("display", {

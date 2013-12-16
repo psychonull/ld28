@@ -136,6 +136,15 @@ module.exports = function (grunt) {
     "concat:game"
   ]);
 
+  grunt.registerTask("prod", [
+    "clean:before",
+    "jshint",
+    "builder:web:local",
+    "concat:vendorWeb",
+    "concat:game",
+    "uglify:all"
+  ]);
+
   grunt.registerTask("watcher", [ "build" ] );
 
   grunt.registerTask("default", "build");

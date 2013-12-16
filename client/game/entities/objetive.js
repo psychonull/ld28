@@ -5,7 +5,7 @@ module.exports = function(game, options){
 
   objetive.add("position", _.pick(options, 'x', 'y'));
   objetive.add("size", { width: 10, height: 10 });
-
+/*
   objetive.add("display", {
     type: "rect",
 
@@ -19,7 +19,7 @@ module.exports = function(game, options){
     fill: "green"
 
   });
-
+*/
   objetive.add('dynamic');
   objetive.add('objetive');
   objetive.add("collision", options.r || 50);
