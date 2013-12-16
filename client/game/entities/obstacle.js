@@ -47,8 +47,6 @@ module.exports = function(game, data){
       width: data.w,
       height: data.h,
 
-      angle: data.angle,
-
       sheet: data.spriteSheet,
       animation: data.type,
       index: 0

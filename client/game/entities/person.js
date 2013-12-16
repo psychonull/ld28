@@ -18,7 +18,7 @@ module.exports = function(game, options){
       }
     },
     inmune: false,
-    skin: 1
+    skin: _.random(1, 5)
   });
 
   var pos = _.pick(options, "x", "y");

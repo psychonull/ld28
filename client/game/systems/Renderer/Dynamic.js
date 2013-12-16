@@ -153,6 +153,21 @@ var RendererDynamic = module.exports = Renderer.extend({
     ctx.lineWidth = 3;
     ctx.stroke();
 
+    //DEBUG BOUNDARIES
+    if (entity.has("boundary") && entity.get("boundary").min.x > 0){
+      var bound = entity.get("boundary");
+      var x = bound.min.x - xView;
+      var y = bound.min.y - yView;
+      var w = bound.max.x - bound.min.x;
+      var h = bound.max.y - bound.min.y;
+
+      ctx.beginPath();
+      ctx.rect(x, y, w, h);
+      ctx.strokeStyle = '#c3f4ba';
+      ctx.lineWidth = 3;
+      ctx.stroke();
+    }
+
     //DEBUG CONTAGION FOCUS
     if (entity.has("contagionFocus")){
       var cf = entity.get("contagionFocus").radius;
@@ -162,8 +177,6 @@ var RendererDynamic = module.exports = Renderer.extend({
       ctx.lineWidth = 2;
       ctx.stroke();
     }
-
-
   },
 
   draw_line: function(entity, display){

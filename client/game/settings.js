@@ -20,8 +20,8 @@ module.exports = {
       initialInfections: 1,
       maxExposureTime: 1,
       exposureCooldown: 3,
-      contagionRadius: 100,
-      contagionPower: 1,
+      contagionRadius: 150,
+      contagionPower: 0.5,
     }
 
   , defaultPersonSpeed: 1.5

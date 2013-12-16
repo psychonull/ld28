@@ -98,7 +98,7 @@ module.exports = function(level){
   controls
     .on('pause', pauseGame)
     .on('slide:start', function(e){
-      if (!game.player.has("target")) {
+      //if (!game.player.has("target")) {
         game.walkLine.set('walkStartingPoint', {
           x: e.x + game.camera.get("position").x,
           y: e.y + game.camera.get("position").y
@@ -108,7 +108,7 @@ module.exports = function(level){
           x: e.x + game.camera.get("position").x,
           y: e.y + game.camera.get("position").y
         });
-      }
+      //}
     }).on('slide', function(e){
 
       if(game.walkLine.has('position')){

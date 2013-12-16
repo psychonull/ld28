@@ -40,16 +40,33 @@ module.exports = {
       "4": "Perseverance",
       "5": "Reunion"
     };
+
     $("canvas").hide();
-    $("#chapter h1").text("CHAPTER " + nbr);
-    $("#chapter h2").text(chapters[nbr]);
+
+    if (nbr >= 6){
+      $("#chapter h1").text("THE END");
+      $("#chapter h2").text("You have saftly survived to the mumps infection ... so far");
+      $("#chapter a.continue").text("Restart");
+    }
+    else {
+      $("#chapter h1").text("CHAPTER " + nbr);
+      $("#chapter h2").text(chapters[nbr]);
+      $("#chapter a.continue").text("Continue >");
+    }
+
     $("#chapter").height($(window).height()-border);
     $("#chapter, .main").width($(window).width()-border);
     $("#chapter").show();
+
     $("#chapter a.continue").on("click", function(){
       $("canvas").show();
       $("#chapter").hide();
-      $(self).trigger('advancelevel', nbr);
+      if (nbr >= 6){
+        $(self).trigger('advancelevel', 1);
+      }
+      else {
+        $(self).trigger('advancelevel', nbr);
+      }
     });
   },
 
