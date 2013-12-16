@@ -42,10 +42,12 @@ module.exports = oaky.System.extend({
         entity.remove('target');
         
         if (entity.has('velocity')){
-          var vel = entity.get('velocity');
-          vel.x = gotBoundX ? 0 : vel.x;
-          vel.y = gotBoundY ? 0 : vel.y;
-          entity.set('velocity', vel);
+          entity.set("velocity", { x: 0, y: 0 });
+          
+          if (entity.is("person")){
+            entity.get("display").animation = "idle_" + entity.get("skin");
+            entity.get("display").index = 0;
+          }
         }
 
         entity.set('position', pos);

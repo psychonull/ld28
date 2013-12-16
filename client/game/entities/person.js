@@ -26,7 +26,6 @@ module.exports = function(game, options){
   person.add("position", pos);
   person.add("velocity", { x: 0, y: 0 });
   person.add("speed", options.speed);
-  //person.add("target", { x: 0, y: 0 });
   person.add("size", { width: 80, height: 120 });
   
   person.add("angle", options.angle);
@@ -35,22 +34,6 @@ module.exports = function(game, options){
 
   person.add("boundary", options.boundary);
 
-/*
-  person.add("display", {
-    type: "rect",
-
-    x: 0,
-    y: 0,
-    width: 30,
-    height: 70,
-
-    strokeColor: "red",
-    strokeWidth: 2,
-    fill: "silver"
-
-  });
-*/
-  
   person.add("skin", options.skin);
 
   person.add("display", {

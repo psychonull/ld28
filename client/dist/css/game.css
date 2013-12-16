@@ -4225,11 +4225,10 @@ body {
   -khtml-user-select: none;
   -webkit-user-select: none;
   -o-user-select: none;
-  background-color: #FFF;
+  border: 5px solid black;
 }
 
 .ctn {
-  background-color: #FFF;
   padding: 0;
 }
 

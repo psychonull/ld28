@@ -14,31 +14,13 @@ module.exports = {
 
   obstacles : [{
     x: 0,
-    y: 0,
+    y: WORLD.h - 40,
     w: WORLD.w,
-    h: 16
-  },
-  {
-    x: 0,
-    y: 0,
-    w: 16,
-    h: WORLD.h,
-  },
-  {
-    x: WORLD.w - 16,
-    y: 0,
-    w: 16,
-    h: WORLD.h,
-  },
-  {
-    x: 0,
-    y: WORLD.h - 16,
-    w: WORLD.w,
-    h: 16
+    h: 50
   }, // fin paredes
   { // techito
     x: 1615,
-    y: 876,
+    y: 850,
     w: 450,
     h: 140,
     type: "awning_upsidedown"
@@ -107,34 +89,38 @@ module.exports = {
         x: 2000,
         y: 1000
       }
-    }
+    },
+    skin: 3
   },
   {
-    "x":1271,
-    "y":355,
+    x:1271,
+    y:355,
     npc: false,
     contagionFocus: {
       radius: 150,
       power: 0.3
     },
-    angle: -0.5
+    angle: -0.5,
+    skin: 2
   },
   {
-    "x":1365,
-    "y":158
+    x:1365,
+    y:158,
+    skin: 4
   },
   {
-    "x":550,
-    "y":210,
+    x:550,
+    y:210,
     npc: {rest: [10, 20]},
     contagionFocus: {
       radius: 250,
       power: 0.2
-    }
+    },
+    skin: 1
   },
   {
-    "x":1280,
-    "y":80,
+    x:1280,
+    y:80,
     npc: {rest: [2, 5]},
     boundary: {
       min: {
@@ -143,7 +129,8 @@ module.exports = {
       max: {
         x:2000,y:240
       }
-    }
+    },
+    skin: 4
   },
   {
     x:672,
@@ -155,7 +142,8 @@ module.exports = {
       max: {
         x:1031,y:764
       }
-    }
+    },
+    skin: 5
   },
   {
     x:300,
@@ -173,7 +161,8 @@ module.exports = {
       radius: 150,
       power: 0.6
     },
-    speed: 5
+    speed: 5,
+    skin: 3
   }],
 
   objetive : {

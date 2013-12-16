@@ -7,9 +7,10 @@ module.exports = function(level){
 
   var $doc = $(document);
 
+  var border = 10;
   var size = {
-    width: $doc.width(),
-    height: $doc.height()
+    width: $doc.width()-border,
+    height: $doc.height()-border
   };
 
   mumps.settings.worldSize = dataIndex[level].worldSize;
@@ -25,8 +26,8 @@ module.exports = function(level){
 
   function updateCameraSize() {
     game.size = {
-      width: $doc.width(),
-      height: $doc.height()
+      width: $doc.width()-border,
+      height: $doc.height()-border
     };
 
     if (mumps.settings.worldSize.w < game.size.width){

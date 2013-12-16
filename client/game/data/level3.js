@@ -14,27 +14,9 @@ module.exports = {
 
   obstacles : [{
     x: 0,
-    y: 0,
+    y: WORLD.h - 40,
     w: WORLD.w,
-    h: 16
-  },
-  {
-    x: 0,
-    y: 0,
-    w: 16,
-    h: WORLD.h,
-  },
-  {
-    x: WORLD.w - 16,
-    y: 0,
-    w: 16,
-    h: WORLD.h,
-  },
-  {
-    x: 0,
-    y: WORLD.h - 16,
-    w: WORLD.w,
-    h: 16
+    h: 50
   }, // fin paredes
   { // techito
     x: 0,
@@ -99,9 +81,9 @@ module.exports = {
     x: 1800,
     y: 350,
     npc: false,
-    angle: 90,
     skin: 1,
-    inmune: true
+    inmune: true,
+    angle: 3
   },
   {
     x: 700,

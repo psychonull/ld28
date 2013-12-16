@@ -12,12 +12,7 @@ module.exports = {
     w: 172,
     h: 600,
     type: "barra"
-  }/*, {
-    x: 0,
-    y: 0,
-    w: 27,
-    h: 1400
-  }*/, {
+  }, {
     x: 0,
     y: 762,
     w: 339,
@@ -38,12 +33,7 @@ module.exports = {
     y: 1221,
     w: 1000 - 648,
     h: 1400 - 1221
-  }/*, {
-    x: 969,
-    y: 0,
-    w: 1000 - 969,
-    h: 1400
-  }*/, {
+  }, {
     x: 738,
     y: 846,
     w: 1000 - 738,
@@ -62,17 +52,18 @@ module.exports = {
     h: 240,
     type: "table"
   }, {
+    x: 835,
+    y: 60,
+    w: 105,
+    h: 120,
+    type: "letter"
+  }, {
     x: 315,
     y: 211,
     w: 662 - 315,
     h: 360 - 211,
     type: "table"
-  }/*, {
-    x: 0,
-    y: 0,
-    w: 1000,
-    h: 20
-  }*/],
+  }],
 
   objetive : {
     x: 855,
@@ -111,34 +102,35 @@ module.exports = {
     x: 830,
     y: 980,
     npc: false,
-    angle: 200,
+    angle: -1.5,
     skin: 3
   },
   {
     x: 824,
     y: 752,
     npc: false,
-    angle: 90,
+    angle: 1.5,
     skin: 4
   },
   {
     x: 50,
     y: 850,
     npc: false,
-    angle: 300,
+    angle: -1.5,
     skin: 5
   },
   {
     x: 50,
     y: 670,
     npc: false,
-    angle: 95,
+    angle: 1.5,
     skin: 6
   }],
 
   player: {
-    x: 550,
-    y: 1345,
+    x: 520,
+    y: 1250,
+    angle: -1.7,
     speed: 5
   }
 };

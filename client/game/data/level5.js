@@ -11,30 +11,7 @@ module.exports = {
   },
   spriteSheet: "bar",
 
-  obstacles : [{
-    x: 0,
-    y: 0,
-    w: WORLD.w,
-    h: 16,
-  },
-  {
-    x: 0,
-    y: 0,
-    w: 16,
-    h: WORLD.h,
-  },
-  {
-    x: WORLD.w - 16,
-    y: 0,
-    w: 16,
-    h: WORLD.h,
-  },
-  {
-    x: 0,
-    y: WORLD.h - 16,
-    w: WORLD.w,
-    h: 16,
-  }, // fin paredes
+  obstacles : [
   {  //pasillo puerta
     x: 0,
     y: 0,
@@ -52,14 +29,14 @@ module.exports = {
     y:226,
     w:1125 - 835,
     h:612 - 226,
-    type: "stand_table"
+    type: "table"
   },
   { // mesa derecha 2
     x:1431,
     y:220,
     w:1711 - 1431,
     h:624 - 220,
-    type: "stand_table"
+    type: "table"
   },
   { // mesa derecha 3
     x:790,

@@ -31,6 +31,7 @@ module.exports = {
   },
 
   showChapterPresentation: function(nbr){
+    var border = 10;
     var self = this;
     var chapters = {
       "1": "Revelations",
@@ -42,8 +43,8 @@ module.exports = {
     $("canvas").hide();
     $("#chapter h1").text("CHAPTER " + nbr);
     $("#chapter h2").text(chapters[nbr]);
-    $("#chapter").height($(window).height());
-    $("#chapter, .main").width($(window).width());
+    $("#chapter").height($(window).height()-border);
+    $("#chapter, .main").width($(window).width()-border);
     $("#chapter").show();
     $("#chapter a.continue").on("click", function(){
       $("canvas").show();
