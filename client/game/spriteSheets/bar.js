@@ -16,11 +16,23 @@ module.exports = {
       w: 380,
       h: 190
     }],
+    table_vertical: [{
+      x: 590,
+      y: 0,
+      w: 190,
+      h: 380
+    }],
     stand_table: [{
       x: 210,
       y: 450,
       w: 335,
       h: 125
+    }],
+    stand_table_vertical: [{
+      x: 590,
+      y: 380,
+      w: 125,
+      h: 335
     }],
     beer: [{
       x: 490,

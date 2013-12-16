@@ -27,16 +27,23 @@ module.exports = {
   { // mesa derecha 1
     x:835,
     y:226,
-    w:1125 - 835,
-    h:612 - 226,
-    type: "table"
+    w: 125,
+    h: 335,
+    type: "stand_table_vertical"
+  },
+  { // mesa derecha 1 MEDIO
+    x:1150,
+    y:226,
+    w: 125,
+    h: 335,
+    type: "stand_table_vertical"
   },
   { // mesa derecha 2
     x:1431,
     y:220,
-    w:1711 - 1431,
-    h:624 - 220,
-    type: "table"
+    w: 125,
+    h: 335,
+    type: "stand_table_vertical"
   },
   { // mesa derecha 3
     x:790,
@@ -52,26 +59,47 @@ module.exports = {
     h:250,
     type: "table"
   },
-  { //barra 1
+  { // mesa derecha 5
+    x:790,
+    y:1360,
+    w:250,
+    h:250,
+    type: "table"
+  },
+  { // mesa derecha 6
+    x:1374,
+    y:1360,
+    w:250,
+    h:250,
+    type: "table"
+  },
+  { // mesa abajo antes bloque
+    x:200,
+    y:1160,
+    w: 190,
+    h: 380,
+    type: "table_vertical"
+  },
+  /*{ //barra 1
     x:610,
     y:1400,
     w:WORLD.w - 610,
     h:1710 - 1400,
     type: "barra"
-  },
+  },*/
   { // separador
-    x:366,
+    x:0,
     y:1720,
     w:WORLD.w - 366,
     h:2112 - 1720
   },
-  { // barra
+  /*{ // barra
     x:582,
     y:2122,
     w:WORLD.w - 582,
     h:2320 - 2122,
     type: "barra"
-  }
+  }*/
   ],
 
   npcs: [
@@ -96,32 +124,32 @@ module.exports = {
 
   // chicas del final:
   {
-    x: 1650,
+    x: 200,
     y: 2650,
     npc: false,
     skin: 6
   },
   {
-    x: 1800,
+    x: 400,
     y: 2650,
     npc: false,
     skin: 2
   },
   {
-    x: 1650,
+    x: 200,
     y: 2800,
     npc: false,
     skin: 4
   },
   {
-    x: 1800,
+    x: 400,
     y: 2800,
     npc: false,
     skin: 4
   }],
 
   objetive : {
-    x: 1700,
+    x: 300,
     y: 2700,
     r: 160
   },
@@ -130,6 +158,7 @@ module.exports = {
   player: {
     x: 130,
     y: 770,
-    speed: 7
+    speed: 7,
+    angle: 0.5
   }
 };
