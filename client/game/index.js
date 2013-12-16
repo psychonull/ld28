@@ -14,6 +14,8 @@ $(function(){
     manager: require('./manager')
   };
 
+  mumps.manager.showLoadingScreen();
+
   loader
     .initResources(
       mumps.settings.images/*, 
@@ -24,11 +26,13 @@ $(function(){
     })
     .on('report', function(prg){
       window.console.log('LOADING > ' + prg);
+      mumps.manager.loadProgress(prg); 
     })
     .on('complete', function(){
       mumps.game = builder;
-      mumps._current = mumps.game(1);
-      //mumps.manager = require('./manager')();
+      mumps.manager.loadComplete();
+      //mumps._current = mumps.game(1);
+      mumps.manager.showChapterPresentation(1);
       mumps.finished = function(){
         mumps._current.stop();
         mumps.manager.show(mumps._current);
@@ -37,7 +41,9 @@ $(function(){
     .load();
 
   $(mumps.manager).on('advancelevel', function(e, levelNbr){
-    mumps._current.destroy();
+    if(mumps._current){
+      mumps._current.destroy();
+    }
     mumps._current = mumps.game(levelNbr);
   });
 });

@@ -4268,3 +4268,15 @@ h5 {
   color: white;
   font-family: cursive;
 }
+
+#chapter {
+  top: 0;
+  left: 0;
+  background-color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+#chapter h1 {
+  color: white;
+}
