@@ -44,10 +44,32 @@ module.exports = {
     type: "awning"
   },
   { // barrera
-    x: 1914,
-    y: 100,
-    w: WORLD.w - 1914,
-    h: WORLD.h - 100
+    x: 1880,
+    y: 20,
+    w: 100,
+    h: 180,
+    type: "fence"
+  },
+  { // barrera
+    x: 1880,
+    y: 270,
+    w: 100,
+    h: 180,
+    type: "fence"
+  },
+  { // barrera
+    x: 1880,
+    y: 500,
+    w: 100,
+    h: 180,
+    type: "fence"
+  },
+  { // barrera
+    x: 1880,
+    y: 750,
+    w: 100,
+    h: 180,
+    type: "fence"
   },
   { // auto
     x:382,

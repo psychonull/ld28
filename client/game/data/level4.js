@@ -45,9 +45,31 @@ module.exports = {
   },
   { // barrera
     x: 10,
-    y: 100,
-    w: 40,
-    h: WORLD.h - 100
+    y: 20,
+    w: 100,
+    h: 180,
+    type: "fence"
+  },
+  { // barrera
+    x: 10,
+    y: 270,
+    w: 100,
+    h: 180,
+    type: "fence"
+  },
+  { // barrera
+    x: 10,
+    y: 500,
+    w: 100,
+    h: 180,
+    type: "fence"
+  },
+  { // barrera
+    x: 10,
+    y: 750,
+    w: 100,
+    h: 180,
+    type: "fence"
   },
   { // auto
     x:382,
