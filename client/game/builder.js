@@ -98,17 +98,15 @@ module.exports = function(level){
   controls
     .on('pause', pauseGame)
     .on('slide:start', function(e){
-      //if (!game.player.has("target")) {
-        game.walkLine.set('walkStartingPoint', {
-          x: e.x + game.camera.get("position").x,
-          y: e.y + game.camera.get("position").y
-        });
+      game.walkLine.set('walkStartingPoint', {
+        x: e.x + game.camera.get("position").x,
+        y: e.y + game.camera.get("position").y
+      });
 
-        game.walkLine.set('target', {
-          x: e.x + game.camera.get("position").x,
-          y: e.y + game.camera.get("position").y
-        });
-      //}
+      game.walkLine.set('target', {
+        x: e.x + game.camera.get("position").x,
+        y: e.y + game.camera.get("position").y
+      });
     }).on('slide', function(e){
 
       if(game.walkLine.has('position')){
@@ -122,6 +120,7 @@ module.exports = function(level){
       if(game.walkLine.has('position') && game.walkLine.has('target')){
         game.player.set('target', game.walkLine.get('target'));
       }
+
       game.walkLine.remove('walkStartingPoint');
       game.walkLine.remove('position');
     });

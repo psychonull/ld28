@@ -25,42 +25,44 @@ module.exports = oaky.System.extend({
         continue;
       }
 
-      var distA = angle - current;
-      if (Math.abs(distA) < 0.1 ){
+      if (entity.is("spinning")){
+        var spin = entity.get("spinning");
+        current += spin;
+        entity.set("angle", current);
+      }
+
+      var dif = this.getShortestArc(current, angle);
+
+      if (Math.abs(dif) < 0.2 ){
         entity.remove("spinning");
         entity.set("angle", angle);
       }
-      else {
-        entity.add("spinning");
-        var distB = current - angle;
-/*
-        var degA = Math.abs(mumps.helpers.angleToDeg(angle));
-        var degB = Math.abs(mumps.helpers.angleToDeg(current));
-        var difA = Math.abs(degA - degB);
-        var difB = 360 - (degA + degB);
-
-        if (difA < difB) {
-          degB += 1;
-          current = mumps.helpers.angleToRad(degB);
+      else if (!entity.is("spinning")){
+     
+        if (dif > current) {
+          entity.add("spinning", 0.2);
         }
         else {
-          degB -= 1;
-          current = mumps.helpers.angleToRad(degB);
+          entity.add("spinning", -0.2);
         }
-        */
-
-        if (distA > distB){
-          current += 0.1;
-        }
-        else {
-          current -= 0.1;
-        }
-
       }
-
-      entity.set("angle", current);
     }
+  },
+
+  getShortestArc: function(a, b){
+    var M_PI = Math.PI;
+
+    if (Math.abs(b - a) < M_PI) {
+      return b-a;
+    }
+
+    if (b > a) {
+      return b - a - M_PI * 2.0;
+    }
+
+    return b - a + M_PI * 2.0;
   }
+
 
 });
 
