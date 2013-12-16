@@ -99,29 +99,34 @@ module.exports = {
     },
     contagionFocus: {
       radius: 150,
-      power: 0.4
-    }
+      power: 0.2
+    },
+    skin: 4
   }, {
     x: 265,
     y: 100,
-    inmune: true
+    inmune: true,
+    skin: 1
   }, 
   {
     x: 319,
     y: 500,
-    inmune: true
+    inmune: true,
+    skin: 2
   },
   {
     x: 830,
     y: 980,
     npc: false,
-    angle: 200
+    angle: 200,
+    skin: 3
   },
   {
     x: 824,
     y: 752,
     npc: false,
-    angle: 90
+    angle: 90,
+    skin: 4
   },
   {
     x: 50,
@@ -136,18 +141,21 @@ module.exports = {
         y: 1060
       }
     },
-    inmune: true
+    inmune: true,
+    skin: 6
   },
   {
     x: 50,
     y: 670,
     npc: false,
-    angle: 95
+    angle: 95,
+    skin: 5
   }],
 
   player: {
     x: 815,
     y: 230,
-    speed: 5
+    speed: 5,
+    skin: 3
   }
 };

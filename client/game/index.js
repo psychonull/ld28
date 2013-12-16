@@ -31,8 +31,8 @@ $(function(){
     .on('complete', function(){
       mumps.game = builder;
       mumps.manager.loadComplete();
-      //mumps._current = mumps.game(1);
-      mumps.manager.showChapterPresentation(1);
+      mumps._current = mumps.game(2);
+      //mumps.manager.showChapterPresentation(1);
       mumps.finished = function(){
         mumps._current.stop();
         mumps.manager.show(mumps._current);

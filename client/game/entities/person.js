@@ -17,7 +17,8 @@ module.exports = function(game, options){
         y: mumps.settings.worldSize.h
       }
     },
-    inmune: false
+    inmune: false,
+    skin: 1
   });
 
   var pos = _.pick(options, "x", "y");
@@ -50,6 +51,8 @@ module.exports = function(game, options){
   });
 */
   
+  person.add("skin", options.skin);
+
   person.add("display", {
     type: "sprite",
     
@@ -59,7 +62,7 @@ module.exports = function(game, options){
     height: 120,
 
     sheet: "person",
-    animation: "idle",
+    animation: "idle_" + options.skin,
     index: 0,
     loop: true,
     frameTime: 200

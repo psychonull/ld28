@@ -99,35 +99,41 @@ module.exports = {
     }
   }, {
     x: 265,
-    y: 100
+    y: 100,
+    skin: 1
   }, 
   {
     x: 319,
-    y: 500
+    y: 500,
+    skin: 2
   },
   {
     x: 830,
     y: 980,
     npc: false,
-    angle: 200
+    angle: 200,
+    skin: 3
   },
   {
     x: 824,
     y: 752,
     npc: false,
-    angle: 90
+    angle: 90,
+    skin: 4
   },
   {
     x: 50,
     y: 850,
     npc: false,
-    angle: 300
+    angle: 300,
+    skin: 5
   },
   {
     x: 50,
     y: 670,
     npc: false,
-    angle: 95
+    angle: 95,
+    skin: 6
   }],
 
   player: {
