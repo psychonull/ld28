@@ -9,13 +9,14 @@ module.exports = {
     w: WORLD.w, 
     h: WORLD.h
   },
-  spriteSheet: "bar",
+  spriteSheet: "street",
+  background: "street_floor",
 
   obstacles : [{
     x: 0,
     y: 0,
     w: WORLD.w,
-    h: 16,
+    h: 16
   },
   {
     x: 0,
@@ -39,7 +40,8 @@ module.exports = {
     x: 0,
     y: 0,
     w: 450,
-    h: 140
+    h: 140,
+    type: "awning"
   },
   { // barrera
     x: 1914,
@@ -51,13 +53,15 @@ module.exports = {
     x:382,
     y:334,
     w:429,
-    h:171
+    h:171,
+    type: "car"
   },
   { // tacho
     x:1164,
     y:696,
     w:283,
-    h:186
+    h:186,
+    type: "trash"
   }
   ],
 

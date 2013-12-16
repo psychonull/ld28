@@ -11,6 +11,8 @@ module.exports = {
     "person": "images/person.png",
     "bar": "images/bar.png",
     "bar_floor": "images/bar_floor.png",
+    "street": "images/street.png",
+    "street_floor": "images/street_bg.png",
     "hud": "images/face.png"
   }
 
