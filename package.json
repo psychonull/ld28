@@ -1,10 +1,10 @@
 {
-  "name": "ld28",
-  "title": "ld28",
+  "name": "mumps",
+  "title": "LD28 - mumps: fear of contagion",
   "version": "1.0.0",
   "private": true,
-  "description": "ld28",
-  "author": "Voider Team <voiderteam@gmail.com>",
+  "description": "Ludum Dare #28 - Mumps: fear of contagion",
+  "author": "PsychoNull @psychonull",
   "engines": {
     "node": ">=0.10.x"
   },

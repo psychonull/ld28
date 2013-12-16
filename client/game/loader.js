@@ -6,34 +6,33 @@ var events = {
 };
 
 var totalImages = 0;
-//var totalSounds = 0;
+var totalSounds = 0;
 var completed = false;
 
 function checkComplete() {
-  if (!completed && totalImages >= 100 /*&& totalSounds >= 50*/){
+  if (!completed && totalImages >= 50 && totalSounds >= 50){
     completed = true;
     events.complete();
   }
 }
 
 function reportProgress(){
-  events.report(totalImages/* + totalSounds*/);
+  events.report(totalImages + totalSounds);
 }
 
 module.exports = {
-  initResources: function(images/*, sounds*/){
+  initResources: function(images, sounds){
 
     mumps.repository
       .addResources(images)
       .on('error', events.error)
       .on('report', function(prg){
-        //totalImages = prg/2;
-        totalImages = prg;
+        totalImages = prg/2;
         reportProgress();
         checkComplete();
       })
       .on('complete', checkComplete);
-/*
+
     mumps.sounds
       .addSounds(sounds)
       .on('error', events.error)
@@ -42,8 +41,8 @@ module.exports = {
         reportProgress();
         checkComplete();
       })
-      .on('complete', checkComplete);    
-*/
+      .on('complete', checkComplete);
+
     return this;
   },
 
@@ -56,7 +55,7 @@ module.exports = {
 
   load: function(){
     mumps.repository.load();
-    //mumps.sounds.load(mumps.settings.soundsUrl);
+    mumps.sounds.load(mumps.settings.soundsUrl);
   }
 };
 

@@ -11,6 +11,7 @@ module.exports = {
   },
   spriteSheet: "street",
   background: "street_floor",
+  music: "music_street",
 
   obstacles : [{
     x: 0,

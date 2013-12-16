@@ -5,6 +5,7 @@ module.exports = {
     h: 1400
   },
   spriteSheet: "bar",
+  music: "music_bar",
 
   obstacles : [{
     x: 0,

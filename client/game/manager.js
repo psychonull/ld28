@@ -1,9 +1,14 @@
 var border = 10;
+var dataIndex = require('./data/index.js');
 
 module.exports = {
 
   show: function(game/*, extra*/){
     var self = this;
+    if (dataIndex[game.level].music !== dataIndex[game.level+1].music){
+      mumps.sounds.stop(dataIndex[game.level].music, 3000);
+    }
+
     $("#cinema .state").html(this.getCinemaHTML(game.level));
     $("#cinema").show();
 
@@ -25,6 +30,18 @@ module.exports = {
   showGame: function(){
     $('#guide').hide();
     $('canvas').show();
+    $("#sound").show();
+
+    $("#sound").on("click", function(){
+      if ($(this).hasClass("on")){
+        mumps.sounds.muteAll();
+        $(this).removeClass("on").addClass("off");
+      }
+      else {
+        mumps.sounds.unmuteAll();
+        $(this).removeClass("off").addClass("on");
+      }
+    });
   },
 
   showLoadingScreen: function(){
@@ -60,6 +77,10 @@ module.exports = {
       $("#chapter h1").text("CHAPTER " + nbr);
       $("#chapter h2").text(chapters[nbr]);
       $("#chapter a.continue").text("Continue >");
+
+      if (nbr === 1 || (dataIndex[nbr].music !== dataIndex[nbr-1].music)){
+        mumps.sounds.play(dataIndex[nbr].music, 3000, true);
+      }
     }
 
     $("#chapter").height($(window).height()-border);

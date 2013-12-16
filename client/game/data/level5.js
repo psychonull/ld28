@@ -10,6 +10,7 @@ module.exports = {
     h: WORLD.h
   },
   spriteSheet: "bar",
+  music: "music_bar2",
 
   obstacles : [
   {  //pasillo puerta

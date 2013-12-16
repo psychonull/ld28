@@ -7,7 +7,7 @@ $(function(){
 
   window.mumps = {
     repository: require('./repository'),
-    //sounds: require('./sounds'),
+    sounds: require('./sounds'),
     settings: require('./settings'),
     Controls: Controls,
     helpers: require("./helpers"),
@@ -15,16 +15,17 @@ $(function(){
   };
 
   mumps.manager.showLoadingScreen();
-  
+
   loader
     .initResources(
-      mumps.settings.images/*, 
-      mumps.settings.sounds*/
+      mumps.settings.images, 
+      mumps.settings.sounds
     )
     .on('error', function(err){
       window.console.log(err);
     })
     .on('report', function(prg){
+      //window.console.log(prg);
       mumps.manager.loadProgress(prg); 
     })
     .on('complete', function(){

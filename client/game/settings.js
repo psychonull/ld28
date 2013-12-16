@@ -29,13 +29,22 @@ module.exports = {
   , defaultPersonSpeed: 1.5
   , defaultNPCRest: [0, 1]
   
-  
-/*
   , soundsUrl: "sounds"
+
   , sounds: { 
-    "x": {
-      file: "blop_1"
+    "music_bar": {
+        file: "Abstraction_LD28_FirstTrack" 
+      , volume: 0.3 // 0.0 to 1.0 (defaults to 0.5)
+    },
+    "music_street": {
+        file: "Abstraction_LD28_SecondTrack" 
+      , volume: 0.3
+    },
+    "music_bar2": {
+        file: "Abstraction_LD28_EighthTrack" 
+      , volume: 0.3
     }
+    
   }
-*/
+
 };
