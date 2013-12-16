@@ -58,14 +58,14 @@ module.exports = {
   },
   {
     x:1112,
-    y:502,
+    y:552,
     w:283,
     h:186,
     type: "trash"
   },
   { // tacho 
     x:1037,
-    y:183,
+    y:143,
     w:120,
     h:220,
     type: "trash"
@@ -76,8 +76,82 @@ module.exports = {
   {
     x: 1800,
     y: 350,
+    boundary: {
+      min: {
+        x: 1600,
+        y: 280
+      },
+      max: {
+        x: 2000,
+        y: 1000
+      }
+    }
+  },
+  {
+    "x":1271,
+    "y":355,
     npc: false,
-    angle: 90
+    contagionFocus: {
+      radius: 150,
+      power: 0.3
+    },
+    angle: -0.5
+  },
+  {
+    "x":1365,
+    "y":158
+  },
+  {
+    "x":550,
+    "y":210,
+    npc: {rest: [10, 20]},
+    contagionFocus: {
+      radius: 250,
+      power: 0.2
+    }
+  },
+  {
+    "x":1280,
+    "y":80,
+    npc: {rest: [2, 5]},
+    boundary: {
+      min: {
+        x:1100,y:30
+      },
+      max: {
+        x:2000,y:240
+      }
+    }
+  },
+  {
+    x:672,
+    y:695,
+    boundary: {
+      min: {
+        x:532,y:501
+      },
+      max: {
+        x:1031,y:764
+      }
+    }
+  },
+  {
+    x:300,
+    y:895,
+    npc: { rest: [0.5, 3]},
+    boundary: {
+      min: {
+        x:200,y:501
+      },
+      max: {
+        x:1031,y:764
+      }
+    },
+    contagionFocus: {
+      radius: 150,
+      power: 0.6
+    },
+    speed: 5
   }],
 
   objetive : {
@@ -85,7 +159,6 @@ module.exports = {
     y: 890,
     r: 160
   },
-
 
   player: {
     x: 160,
