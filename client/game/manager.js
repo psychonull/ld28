@@ -1,3 +1,4 @@
+var border = 10;
 
 module.exports = {
 
@@ -22,16 +23,18 @@ module.exports = {
   },
 
   showLoadingScreen: function(){
+    $("#loading").height($(window).height()-border);
+    $("#loading, .main").width($(window).width()-border);
+
     $("canvas").hide();
     $("#loading").show();
   },
 
   loadProgress: function(prg){
-    $("#prg, #loading").text(prg);
+    $("#prg", "#loading").css("width", prg + "%");
   },
 
   showChapterPresentation: function(nbr){
-    var border = 10;
     var self = this;
     var chapters = {
       "1": "Revelations",
@@ -45,7 +48,7 @@ module.exports = {
 
     if (nbr >= 6){
       $("#chapter h1").text("THE END");
-      $("#chapter h2").text("You have saftly survived to the mumps infection ... so far");
+      $("#chapter h2").text("You have safetly survived to the mumps infection ... so far");
       $("#chapter a.continue").text("Restart");
     }
     else {

@@ -4243,7 +4243,7 @@ body {
   left: 0;
 }
 
-#cinema {
+#cinema, .loading {
   position: absolute;
   top: 0;
   left: 0;
@@ -4301,7 +4301,7 @@ body {
   background: white;
 }
 
-#chapter {
+#chapter, #loading {
   top: 0;
   left: 0;
   margin: 0;
@@ -4310,7 +4310,7 @@ body {
   background: url("../images/chapter_bg.png");
 }
 
-#chapter h1 {
+#chapter h1, #loading h1{
   color: white;
   width: 100%;
   text-align: center;
@@ -4320,7 +4320,7 @@ body {
   margin-top: 0;
   padding-top: 5%;
 }
-#chapter h2 {
+#chapter h2, #loading h2 {
   color: white;
   width: 100%;
   text-align: center;
@@ -4329,7 +4329,7 @@ body {
   display: block;
 }
 
-#chapter a {
+#chapter a, #loading a {
   color: white;
   text-align: right;
   font-family: 'Candal', sans-serif;
@@ -4365,4 +4365,44 @@ body {
   text-decoration: none;
   padding: 8px;
   font-size: 1em;
+}
+
+#loading h2 {
+  font-size: 2em;
+}
+
+#loading .content {
+  width: 500px;
+  margin: 0 auto;
+}
+
+#loading span {
+  font-family: 'Candal', sans-serif;
+  font-size: 1.5em;
+  color: white;
+  line-height: 2;
+}
+
+#loading .bar {
+  width: 100%;
+  background: rgb(104, 104, 104);
+  height: 25px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.9) inset;
+  border: 1px solid rgb(56, 56, 56);
+}
+
+#loading .bar>div {
+  background: rgb(30, 85, 201);
+  height: 25px;
+  box-shadow: 2px 0px 6px rgba(0,0,0,0.9) inset;
+
+  -webkit-animation: pulsate 1s ease-out;
+  -webkit-animation-iteration-count: infinite; 
+  opacity: 1;
+}
+
+@-webkit-keyframes pulsate {
+  0% {opacity: 0.3;}
+  50% {opacity: 1.0;}
+  100% {opacity: 0.3;}
 }

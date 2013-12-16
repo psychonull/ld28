@@ -15,7 +15,7 @@ $(function(){
   };
 
   mumps.manager.showLoadingScreen();
-
+  
   loader
     .initResources(
       mumps.settings.images/*, 
@@ -25,20 +25,23 @@ $(function(){
       window.console.log(err);
     })
     .on('report', function(prg){
-      window.console.log('LOADING > ' + prg);
       mumps.manager.loadProgress(prg); 
     })
     .on('complete', function(){
-      mumps.game = builder;
-      mumps.manager.loadComplete();
-      mumps._current = mumps.game(5);
-      //mumps.manager.showChapterPresentation(1);
-      mumps.finished = function(){
-        mumps._current.stop();
-        mumps.manager.show(mumps._current);
-      };
+      $("#loading .play").show();
     })
     .load();
+
+  $("#loading .play").on("click", function(){
+    mumps.game = builder;
+    mumps.manager.loadComplete();
+    //mumps._current = mumps.game(5);
+    mumps.manager.showChapterPresentation(1);
+    mumps.finished = function(){
+      mumps._current.stop();
+      mumps.manager.show(mumps._current);
+    };
+  });
 
   $(mumps.manager).on('advancelevel', function(e, levelNbr){
     if(mumps._current){
