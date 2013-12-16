@@ -34,10 +34,10 @@ module.exports = oaky.System.extend({
           personA.remove("target");
           personB.remove("target");
 
-          personA.get("display").animation = "idle";
+          personA.get("display").animation = "idle_" + personA.get("skin");
           personA.get("display").index = 0;
 
-          personB.get("display").animation = "idle";
+          personB.get("display").animation = "idle_" + personB.get("skin");
           personB.get("display").index = 0;
 
           if (personA.is("player")){

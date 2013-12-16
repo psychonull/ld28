@@ -17,7 +17,10 @@ module.exports = function(game, person, options){
     }
   });
 
+  var skin = 0;
   person.get("display").fill = "red";
+  person.get("display").animation = "idle_" + skin;
+  person.set("skin", skin);
 
   person.add("dynamic");
   person.add('player');

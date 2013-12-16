@@ -24,7 +24,7 @@ module.exports = oaky.System.extend({
         if (collide){
           person.remove("target");
 
-          person.get("display").animation = "idle";
+          person.get("display").animation = "idle_" + person.get("skin");
           person.get("display").index = 0;
 
           if (person.is("player")){

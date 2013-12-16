@@ -14,7 +14,6 @@ module.exports = oaky.System.extend({
       var pos = entity.get('position');
 
       if (entity.is("spinning")){
-        //entity.get("display").animation = "idle";
         entity.set("velocity", {
           x: 0,
           y: 0
@@ -28,7 +27,7 @@ module.exports = oaky.System.extend({
 
         if (gotTarget){
           
-          entity.get("display").animation = "idle";
+          entity.get("display").animation = "idle_" + entity.get("skin");
           entity.get("display").index = 0;
           
           entity.remove("target");
@@ -42,8 +41,8 @@ module.exports = oaky.System.extend({
           }
         }
         else {
-          if (entity.get("display").animation === "idle"){
-            entity.get("display").animation = "walking";
+          if (entity.get("display").animation.indexOf("idle") > -1){
+            entity.get("display").animation = "walking_" + entity.get("skin");
             entity.get("display").index = 0;
           }
 
