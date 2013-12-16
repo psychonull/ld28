@@ -10,6 +10,12 @@ module.exports = {
       w: 545,
       h: 240
     }],
+    awning_upsidedown: [{
+      x: 0,
+      y: 800,
+      w: 545,
+      h: 240
+    }],
     car: [{
       x: 545,
       y: 0,
