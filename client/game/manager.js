@@ -17,14 +17,19 @@ module.exports = {
     $('#cinema .state').empty();
   },
 
-  loadComplete: function(){
+  showGuide: function(){
     $('#loading').hide();
+    $('#guide').show();
+  },
+
+  showGame: function(){
+    $('#guide').hide();
     $('canvas').show();
   },
 
   showLoadingScreen: function(){
-    $("#loading").height($(window).height()-border);
-    $("#loading, .main").width($(window).width()-border);
+    $("#loading, #guide").height($(window).height()-border);
+    $("#loading, #guide, .main").width($(window).width()-border);
 
     $("canvas").hide();
     $("#loading").show();

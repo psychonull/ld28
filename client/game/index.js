@@ -32,15 +32,19 @@ $(function(){
     })
     .load();
 
-  $("#loading .play").on("click", function(){
+  $("#guide .play").on("click", function(){
     mumps.game = builder;
-    mumps.manager.loadComplete();
+    mumps.manager.showGame();
     //mumps._current = mumps.game(5);
     mumps.manager.showChapterPresentation(1);
     mumps.finished = function(){
       mumps._current.stop();
       mumps.manager.show(mumps._current);
     };
+  });
+
+  $("#loading .play").on("click", function(){
+    mumps.manager.showGuide();
   });
 
   $(mumps.manager).on('advancelevel', function(e, levelNbr){

@@ -4301,7 +4301,7 @@ body {
   background: white;
 }
 
-#chapter, #loading {
+#chapter, #loading, #guide {
   top: 0;
   left: 0;
   margin: 0;
@@ -4310,7 +4310,7 @@ body {
   background: url("../images/chapter_bg.png");
 }
 
-#chapter h1, #loading h1{
+#chapter h1, #loading h1, #guide h1{
   color: white;
   width: 100%;
   text-align: center;
@@ -4320,7 +4320,7 @@ body {
   margin-top: 0;
   padding-top: 5%;
 }
-#chapter h2, #loading h2 {
+#chapter h2, #loading h2, #guide h1 {
   color: white;
   width: 100%;
   text-align: center;
@@ -4329,7 +4329,7 @@ body {
   display: block;
 }
 
-#chapter a, #loading a {
+#chapter a, #loading a, #guide a {
   color: white;
   text-align: right;
   font-family: 'Candal', sans-serif;
@@ -4405,4 +4405,28 @@ body {
   0% {opacity: 0.3;}
   50% {opacity: 1.0;}
   100% {opacity: 0.3;}
+}
+
+#guide .showoff {
+  width: 180px;
+  height: 245px;
+  margin: 0 auto;
+  border: 5px solid white;
+  box-shadow: 3px 3px 6px black;
+}
+
+#guide .showoff img {
+  width: 180px;
+  height: 245px;
+}
+
+#guide span {
+  width: 100%;
+  text-align: center;
+  display: block;
+  line-height: 2;
+  margin-top: 20px;
+  font-size: 1.5em;
+  font-family: 'Candal', sans-serif;
+  color: white;
 }
