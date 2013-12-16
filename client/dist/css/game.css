@@ -4212,6 +4212,12 @@ h5 {
 }
 
 
+body {
+  background-color: #000;
+  background: url("../images/chapter_bg.png");
+
+}
+
 /* GAME */
 .main {
   margin: 0 auto;
@@ -4245,38 +4251,91 @@ h5 {
   background: rgba(255,255,255,0.4);
 }
 
+#cinema p {
+  margin: 2% 0;
+}
+
+#cinema p label {
+  color: gray;
+  margin-right: 1%;
+}
+
 #cinema .state {
-  height: auto;
-  height: 90%;
-  width: 80%;
+  width: 60%;
   margin: 2% auto;
-  border: solid 1px black;
-  background: silver;
-  border-radius: 20px;
+  border: solid 7px black;
+  background: white;
+  padding: 7%;
+  border-radius: 10px;
+  font-family: 'Englebert';
+  font-size: 1.7em;
+}
+
+#cinema quote {
+  font-family: 'Gloria Hallelujah';
+  font-style: oblique;
+  margin: 2%;
+  color: rgb(85, 85, 85);
+  display: block;
+}
+
+#cinema quote p {
+  margin: 0;
+  font-size: 0.8em;
 }
 
 #cinema .next {
   position: absolute;
   right: 15%;
   bottom: 10%;
-  padding: 2%;
-  background-color: rgb(99, 219, 89);
+  padding: 1% 2%;
   border-radius: 10px;
   border: 3px solid white;
-  box-shadow: 3px 3px 3px rgba(0,0,0,0.4);
-  font-size: 3em;
   color: white;
-  font-family: cursive;
+  font-family: 'Englebert';
+  font-size: 3em;
+  background-color: black;
+}
+
+#cinema .next:hover {
+  color: black;
+  background: white;
 }
 
 #chapter {
   top: 0;
   left: 0;
-  background-color: #000;
   margin: 0;
   padding: 0;
+  background-color: #000;
+  background: url("../images/chapter_bg.png");
 }
 
 #chapter h1 {
   color: white;
+  width: 100%;
+  text-align: center;
+  font-family: 'Candal', sans-serif;
+  font-size: 4em;
+  display: block;
+  margin-top: 0;
+  padding-top: 5%;
+}
+#chapter h2 {
+  color: white;
+  width: 100%;
+  text-align: center;
+  font-family: 'Candal', sans-serif;
+  font-size: 3em;
+  display: block;
+}
+
+#chapter a {
+  color: white;
+  text-align: right;
+  font-family: 'Candal', sans-serif;
+  font-size: 2em;
+  float: right;
+  margin-right: 10%;
+  padding: 5%;
 }
