@@ -64,7 +64,7 @@ module.exports = {
       "3": ["Chimataru: hey, why are you blocking the street?</br>",
           "Unknown human: I won't let them come. The mumps are contagious and stronger in the other side </br>",
           "Chimataru: I don't care. Goodbye sir"],
-      "4": ["I feel ready for this."],
+      "4": ["The people is not being polite. Not at all. They keep pushing me. However, I feel ready for this."],
       "5": ["Chimataru: I made impossible things to get to you.</br>",
            "Lilita: I'm really sorry. I regret those silly discussions and life-wasting Angry moments.",
            "Just let's enjoy. <b>You only get one life.</b>" ]
