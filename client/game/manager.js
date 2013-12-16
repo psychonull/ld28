@@ -69,10 +69,18 @@ module.exports = {
       "5": ["<p><label>Chimataru:</label><span>I've made impossible things to get to you.</span></p>",
            "<p><label>Lilita:</label><span>I'm really sorry. I regret those silly discussions and life-wasting angry moments.</span></p>",
            "<p>Just let's enjoy. <b>You only get one life.</b></p>" ]
-
     };
 
     return html[level];
+  },
+
+  showGameOver: function(level){
+    var self = this;
+    $('#gameover').show();
+    $('.retry', "#gameover").on("click", function(){
+      $('#gameover').hide();
+      $(self).trigger('advancelevel', level);
+    });
   }
 
 

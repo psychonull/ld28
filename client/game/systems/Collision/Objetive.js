@@ -9,6 +9,11 @@ module.exports = oaky.System.extend({
 
   process: function() {
     var player = this.game.player;
+
+    if (!player.is("player")){
+      return;
+    }
+
     var objetive = this.game.objetive;
 
     var collide = ( 
