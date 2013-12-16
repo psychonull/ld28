@@ -4280,3 +4280,34 @@ h5 {
 #chapter h1 {
   color: white;
 }
+
+#gameover {
+  position: absolute;
+  top: 13em;
+  left: 29em;
+  background-color: black;
+  padding: 50px;
+  border: white 2px double;
+  color: white;
+  text-align: center;
+}
+
+#gameover h1{
+  color: white;
+}
+
+#gameover a {
+  color: blue;
+  border: white 1px solid;
+  padding: 12px;
+  background-color: silver;
+  text-decoration: none;
+}
+
+#gameover a:hover {
+  color: blue;
+  border: white 0px solid;
+  padding: 11px;
+  background-color: #FFF;
+  text-decoration: none;
+}

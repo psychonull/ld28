@@ -33,7 +33,8 @@ module.exports = function(game){
 
   systems.contagion = {
     contagion: require('./Contagion').create(),
-    infection: require('./Infection').create()
+    infection: require('./Infection').create(),
+    gameOverMumped: require('./GameOverMumped').create()
   };
 
   systems.controls = {
