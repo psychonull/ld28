@@ -97,25 +97,50 @@ module.exports = {
   }
   ],
 
-  npcs: [{
+  npcs: [
+  {
+    x: 1000,
+    y: 750,   
+  },
+  {
+    x: 1500,
+    y: 750,   
+  },
+  {
+    x: 1500,
+    y: 1200,   
+  },
+  {
+    x: 1800,
+    y: 250,
+    npc: { rest: [12, 20]},
+    skin: 6
+  },
+
+  // chicas del final:
+  {
     x: 1650,
     y: 2650,
-    npc: false
+    npc: false,
+    skin: 6
   },
   {
     x: 1800,
     y: 2650,
-    npc: false
+    npc: false,
+    skin: 2
   },
   {
     x: 1650,
     y: 2800,
-    npc: false
+    npc: false,
+    skin: 4
   },
   {
     x: 1800,
     y: 2800,
-    npc: false
+    npc: false,
+    skin: 4
   }],
 
   objetive : {
@@ -128,6 +153,6 @@ module.exports = {
   player: {
     x: 130,
     y: 770,
-    speed: 5
+    speed: 7
   }
 };
