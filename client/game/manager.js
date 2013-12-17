@@ -5,7 +5,7 @@ module.exports = {
 
   show: function(game/*, extra*/){
     var self = this;
-    if (dataIndex[game.level].music !== dataIndex[game.level+1].music){
+    if (!dataIndex[game.level+1] || dataIndex[game.level].music !== dataIndex[game.level+1].music){
       mumps.sounds.stop(dataIndex[game.level].music, 3000);
     }
 
