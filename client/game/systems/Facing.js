@@ -18,7 +18,6 @@ module.exports = oaky.System.extend({
       var d = mumps.helpers.vectors.difference(center, to);
 
       var angle = mumps.helpers.vectors.angleTo(d);
-
       var current = entity.get("angle");
 
       if (angle === current){
@@ -38,13 +37,7 @@ module.exports = oaky.System.extend({
         entity.set("angle", angle);
       }
       else if (!entity.is("spinning")){
-     
-        if (dif > current) {
-          entity.add("spinning", 0.2);
-        }
-        else {
-          entity.add("spinning", -0.2);
-        }
+        entity.add("spinning", 0.2 * this.getTurnDirection(current, angle));
       }
     }
   },
@@ -61,6 +54,12 @@ module.exports = oaky.System.extend({
     }
 
     return b - a + M_PI * 2.0;
+  },
+
+  getTurnDirection: function(current, angle){
+    var currentDeg = mumps.helpers.angleToDeg(current),
+      angleDeg = mumps.helpers.angleToDeg(angle);
+    return Math.abs((currentDeg-angleDeg+360)%360)>180 ? 1 : -1;
   }
 
 
